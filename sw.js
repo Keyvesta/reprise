@@ -1,4 +1,4 @@
-const CACHE = "reprise-v2";
+const CACHE = "reprise-v3";
 const ASSETS = ["./", "./index.html", "./manifest.json", "./icon.png"];
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)));
