@@ -558,8 +558,16 @@ function ym(s){ return s.slice(0,7); }
 function weekId(dateIso){ const d=fromIso(dateIso); const dow=(d.getDay()+6)%7; d.setDate(d.getDate()-dow); return iso(d); }
 function esc(t){ return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
 function uid(){ return Math.random().toString(36).slice(2,9); }
-function fmtTime(sec){ sec=Math.round(sec); const h=Math.floor(sec/3600),m=Math.floor(sec%3600/60),s=sec%60;
-  return h? h+"h"+String(m).padStart(2,"0")+":"+String(s).padStart(2,"0") : m+":"+String(s).padStart(2,"0"); }
+function fmtTime(sec){
+  sec=Math.abs(sec);
+  let base=Math.floor(sec);
+  let cc=Math.round((sec-base)*100);
+  if(cc===100){base+=1;cc=0;}
+  const h=Math.floor(base/3600),m=Math.floor(base%3600/60),s=base%60;
+  const frac=cc>0? ","+String(cc).padStart(2,"0") : "";
+  return (h? h+"h"+String(m).padStart(2,"0")+":"+String(s).padStart(2,"0") : m+":"+String(s).padStart(2,"0"))+frac;
+}
+function fmtGap(sec){ sec=Math.abs(sec); return sec<60? sec.toFixed(2).replace(".",",")+" s" : fmtTime(sec); }
 function fmtDist(d){ d=Number(d); return d>=1000? (d%1000===0? d/1000+" km" : (d/1000).toFixed(3).replace(".",",")+" km") : d+" m"; }
 
 /* ---------- LE COACH : calibration & prescriptions ---------- */
@@ -731,7 +739,7 @@ function newBlock(exId, dateIso, day){
     }
     if(ex.ut==="sec") b.sec=p?String(p.sec):"";
     if(ex.ut==="nb") b.nb=p?String(p.nb):"";
-    if(ex.ut==="min"){ b.min=""; if(ex.dist) b.dist=""; if(exId==="rameur-course"){b.race="";b.rmin="";b.rsec="";} }
+    if(ex.ut==="min"){ b.min=""; if(ex.dist) b.dist=""; if(exId==="rameur-course"){b.race="";b.rmin="";b.rsec="";b.rcc="";} }
   }
   return b;
 }
@@ -965,17 +973,18 @@ function projection80(){
 /* ---------- Records rameur (courses) ---------- */
 function checkRaceRecord(b){
   if(b.exId!=="rameur-course"||!b.race) return false;
-  const dist=Number(b.race); const sec=(Number(b.rmin)||0)*60+(Number(b.rsec)||0);
+  const dist=Number(b.race);
+  const sec=(Number(b.rmin)||0)*60+(Number(b.rsec)||0)+(Number(b.rcc)||0)/100;
   if(!dist||!sec) return false;
   const old=S.raceRecords[dist];
   if(!old || sec<old.sec){
     S.raceRecords[dist]={sec, date:todayIso()}; save();
     addXP(XP.pr);
-    showCongrats("⏱ RECORD SUR "+fmtDist(dist)+" : "+fmtTime(sec)+(old?" (ancien : "+fmtTime(old.sec)+")":" — première référence posée")+" ! +"+XP.pr+" XP. "+pickCongrats(), true);
+    showCongrats("⏱ RECORD SUR "+fmtDist(dist)+" : "+fmtTime(sec)+(old?" — l'ancien ("+fmtTime(old.sec)+") tombe de "+fmtGap(old.sec-sec):" — première référence posée")+" ! +"+XP.pr+" XP. "+pickCongrats(), true);
     checkTrophies();
     return true;
   }
-  toast("⏱ "+fmtTime(sec)+" — le record ("+fmtTime(old.sec)+") tient encore. Il tremble, mais il tient.");
+  toast("⏱ "+fmtTime(sec)+" — le record ("+fmtTime(old.sec)+") tient à "+fmtGap(sec-old.sec)+" près. Il tremble.");
   return false;
 }
 
@@ -1546,9 +1555,10 @@ function blockInputs(b,i,ex){
         +'</select></div>';
       if(b.race){
         inputs+='<div class="setrow"><span class="lbl">min</span><input type="number" inputmode="numeric" placeholder="min" value="'+(b.rmin||"")+'" onchange="blockVal('+i+',\'rmin\',this.value)">'
-          +'<span class="lbl">sec</span><input type="number" inputmode="numeric" placeholder="sec" value="'+(b.rsec||"")+'" onchange="blockVal('+i+',\'rsec\',this.value)"></div>';
+          +'<span class="lbl">sec</span><input type="number" inputmode="numeric" placeholder="sec" value="'+(b.rsec||"")+'" onchange="blockVal('+i+',\'rsec\',this.value)">'
+          +'<span class="lbl">/100</span><input type="number" inputmode="numeric" placeholder="cc" value="'+(b.rcc||"")+'" onchange="blockVal('+i+',\'rcc\',this.value)"></div>';
         const rec=S.raceRecords[b.race];
-        if(rec) inputs+='<div class="lastperf">Record actuel : '+fmtTime(rec.sec)+' ('+fmtShort(rec.date)+') — objectif : faire mieux 😈</div>';
+        if(rec) inputs+='<div class="lastperf">Record : '+fmtTime(rec.sec)+' ('+fmtShort(rec.date)+') · allure à battre : '+fmtTime(rec.sec/Number(b.race)*500)+' /500m 😈</div>';
         else inputs+='<div class="sugg">Première tentative sur cette distance — tout chrono devient LE record.</div>';
       } else {
         inputs+='<div class="setrow"><span class="lbl">min</span><input type="number" inputmode="numeric" placeholder="minutes" value="'+(b.min||"")+'" onchange="blockVal('+i+',\'min\',this.value)"></div>'
@@ -1604,7 +1614,7 @@ function setStatus(i,st){
     b.doneAt=String(now.getHours()).padStart(2,"0")+":"+String(now.getMinutes()).padStart(2,"0");
   }
   if(b.exId==="rameur-course"&&b.race&&(b.status==="fait"||b.status==="partiel")){
-    const totMin=(Number(b.rmin)||0)+(Number(b.rsec)||0)/60;
+    const totMin=(Number(b.rmin)||0)+((Number(b.rsec)||0)+(Number(b.rcc)||0)/100)/60;
     if(totMin>0) b.min=String(Math.round(totMin*10)/10);
     b.dist=String(b.race);
   }
@@ -2137,12 +2147,14 @@ function statsCardio(){
 function openRaceEdit(dist){
   const r=S.raceRecords[dist];
   const mn=r?Math.floor(r.sec/60):"";
-  const sc=r?r.sec%60:"";
+  const sc=r?Math.floor(r.sec%60):"";
+  const cc=r?Math.round((r.sec-Math.floor(r.sec))*100):"";
   const html='<div class="modal-bg" onclick="if(event.target===this)closeModal()"><div class="modal">'
     +'<h3>⏱ Record — '+fmtDist(dist)+'</h3>'
-    +'<div class="muted small" style="margin-bottom:8px">Saisis ton meilleur chrono existant sur cette distance (référence de départ, sans XP — la gloire viendra en le battant).</div>'
+    +'<div class="muted small" style="margin-bottom:8px">Saisis ton meilleur chrono existant sur cette distance (référence de départ, sans XP — la gloire viendra en le battant). Les centièmes comptent sur les courtes distances.</div>'
     +'<div class="setrow"><span class="lbl">min</span><input type="number" inputmode="numeric" id="reMin" value="'+mn+'" placeholder="min">'
-    +'<span class="lbl">sec</span><input type="number" inputmode="numeric" id="reSec" value="'+sc+'" placeholder="sec"></div>'
+    +'<span class="lbl">sec</span><input type="number" inputmode="numeric" id="reSec" value="'+sc+'" placeholder="sec">'
+    +'<span class="lbl">/100</span><input type="number" inputmode="numeric" id="reCc" value="'+(cc===0?"":cc)+'" placeholder="cc"></div>'
     +'<div class="row" style="gap:8px;margin-top:14px">'
     +'<button class="btn primary grow" onclick="saveRaceEdit('+dist+')">Enregistrer</button>'
     +(r?'<button class="btn" style="color:var(--bad)" onclick="if(confirm(\'Effacer ce record ?\')){delete S.raceRecords['+dist+'];save();closeModal();render()}">Effacer</button>':'')
@@ -2152,7 +2164,8 @@ function openRaceEdit(dist){
 function saveRaceEdit(dist){
   const mn=Number(document.getElementById("reMin").value)||0;
   const sc=Number(document.getElementById("reSec").value)||0;
-  const sec=mn*60+sc;
+  const cc=Number(document.getElementById("reCc").value)||0;
+  const sec=mn*60+sc+Math.min(99,Math.max(0,cc))/100;
   if(sec<=0){toast("Chrono invalide");return;}
   S.raceRecords[dist]={sec,date:(S.raceRecords[dist]&&S.raceRecords[dist].date)||todayIso()};
   save();closeModal();toast("⏱ Record enregistré : "+fmtTime(sec)+" sur "+fmtDist(dist));
