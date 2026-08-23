@@ -259,23 +259,49 @@ const HEALTH_FIELDS = [
   {id:"ageMet", name:"Âge Métabolique", unit:"ans", step:1}
 ];
 const RANKS = [
-  {xp:0,    name:"Larve de Canapé",             emoji:"🛋️"},
-  {xp:120,  name:"Stagiaire de l'Échauffement", emoji:"🥱"},
-  {xp:320,  name:"Apprenti de la Fonte",        emoji:"🔩"},
-  {xp:620,  name:"Soldat du Rameur",            emoji:"🚣"},
-  {xp:1000, name:"Sergent des Squats",          emoji:"🦵"},
-  {xp:1500, name:"Lieutenant du Lest",          emoji:"🎖️"},
-  {xp:2150, name:"Capitaine Cardio",            emoji:"⛵"},
-  {xp:2950, name:"Commandant du Gainage",       emoji:"🛡️"},
-  {xp:3900, name:"Colonel des Pectoraux",       emoji:"🦍"},
-  {xp:5000, name:"Général de la Suée",          emoji:"⚔️"},
-  {xp:6300, name:"Maréchal du Muscle",          emoji:"🏛️"},
-  {xp:7800, name:"Machine Biomécanique",        emoji:"🤖"},
-  {xp:9500, name:"Demi-Dieu du Deload",         emoji:"⚡"},
-  {xp:11500,name:"Légende Vivante du Vestiaire",emoji:"👑"}
+  {xp:0,    name:"Larve de Canapé",              emoji:"🛋️"},
+  {xp:60,   name:"Ver de Terre Motivé",          emoji:"🪱"},
+  {xp:140,  name:"Stagiaire de l'Échauffement",  emoji:"🥱"},
+  {xp:240,  name:"Porteur d'Eau Officiel",       emoji:"💧"},
+  {xp:360,  name:"Apprenti de la Fonte",         emoji:"🔩"},
+  {xp:500,  name:"Trotteur de Salon",            emoji:"👟"},
+  {xp:660,  name:"Soldat du Rameur",             emoji:"🚣"},
+  {xp:840,  name:"Caporal des Courbatures",      emoji:"🤕"},
+  {xp:1040, name:"Sergent des Squats",           emoji:"🦵"},
+  {xp:1260, name:"Adjudant des Abdos",           emoji:"🧱"},
+  {xp:1500, name:"Lieutenant du Lest",           emoji:"🎖️"},
+  {xp:1760, name:"Capitaine Cardio",             emoji:"⛵"},
+  {xp:2040, name:"Commandant du Gainage",        emoji:"🛡️"},
+  {xp:2340, name:"Major de la Fonte",            emoji:"🏋️"},
+  {xp:2660, name:"Colonel des Pectoraux",        emoji:"🦍"},
+  {xp:3000, name:"Brigadier du Biceps",          emoji:"💪"},
+  {xp:3360, name:"Général de la Suée",           emoji:"⚔️"},
+  {xp:3740, name:"Maréchal du Muscle",           emoji:"🏛️"},
+  {xp:4140, name:"Gladiateur du Garage",         emoji:"🏟️"},
+  {xp:4560, name:"Centurion du Salon",           emoji:"🗡️"},
+  {xp:5000, name:"Spartiate d'Appartement",      emoji:"🔱"},
+  {xp:5460, name:"Titan du Tapis",               emoji:"🌋"},
+  {xp:5940, name:"Vice-Roi du Vestiaire",        emoji:"👔"},
+  {xp:6440, name:"Baron de la Barre",            emoji:"🎩"},
+  {xp:6960, name:"Duc du Développé",             emoji:"🐂"},
+  {xp:7500, name:"Archiduc des Haltères",        emoji:"🦂"},
+  {xp:8060, name:"Prince du Protéiné",           emoji:"🥩"},
+  {xp:8640, name:"Roi du Rameur",                emoji:"⚜️"},
+  {xp:9240, name:"Empereur de l'Effort",         emoji:"🏺"},
+  {xp:9860, name:"Sensei de la Sueur",           emoji:"🥋"},
+  {xp:10500,name:"Shogun du Shaker",             emoji:"🍶"},
+  {xp:11160,name:"Ninja des Nuobell",            emoji:"🥷"},
+  {xp:11840,name:"Samouraï du Split",            emoji:"🗡"},
+  {xp:12540,name:"Grand Sage du Gainage",        emoji:"🧙"},
+  {xp:13260,name:"Oracle de l'Ergatta",          emoji:"🔮"},
+  {xp:14000,name:"Immortel de l'Intervalle",     emoji:"🧬"},
+  {xp:14760,name:"Machine Biomécanique",         emoji:"🤖"},
+  {xp:15540,name:"Demi-Dieu du Deload",          emoji:"⚡"},
+  {xp:16340,name:"Légende Vivante du Vestiaire", emoji:"🏆"},
+  {xp:17160,name:"Mythe Absolu du Miroir",       emoji:"👑"}
 ];
 function rankFor(xp){ let r=0; RANKS.forEach((rk,i)=>{ if(xp>=rk.xp) r=i; }); return r; }
-function rankTier(){ return Math.min(2, Math.floor(rankFor(S.xp||0)/5)); }
+function rankTier(){ return Math.min(2, Math.floor(rankFor(S.xp||0)/14)); }
 const XP = { fait:10, partiel:5, water:5, supp:5, pr:25, dayComplete:20, longRow:15, boss:150, trophy:40, measure:3 };
 const TROPHIES = [
   {id:"first_pr",   emoji:"⭐", name:"Première Pierre",    desc:"Battre son tout premier record", hint:"Tout empire commence quelque part…"},
@@ -375,7 +401,97 @@ const QUOTES = [
 "« La régularité est la mère de tous les records. » — adage d'athlétisme",
 "« Douter avant, transpirer pendant, sourire après. » — cycle de l'effort",
 "« Les jambes font le travail, la tête fait la différence. » — dicton de rameur",
-"« Vise le progrès, pas la perfection. » — règle d'or du sportif"
+"« Vise le progrès, pas la perfection. » — règle d'or du sportif",
+"« Le championnat se gagne à l'entraînement, on ne fait que le récupérer en public. » — mentalité de dojo",
+"« Fatigué ? Parfait, c'est là que commence la séance. » — dicton de préparation physique",
+"« On ne négocie pas avec un haltère. » — loi du vestiaire",
+"« Le muscle est un contrat : tu verses chaque jour, il paie chaque année. » — sagesse d'entraîneur",
+"« Un squat par jour éloigne le kiné pour toujours. » — presque un proverbe",
+"« La graisse déteste les rendez-vous réguliers. » — vérité de terrain",
+"« Chaque goutte de sueur est un centime sur ton compte forme. » — comptabilité du sportif",
+"« Le cardio du matin rend intouchable le reste de la journée. » — expérience universelle",
+"« Ce n'est pas le poids qui est lourd, c'est l'excuse. » — coach de boxe anonyme",
+"« Les champions font ce que les autres remettent à lundi. » — observation de salle",
+"« Ton record d'hier est ton échauffement de demain. » — logique de progression",
+"« Le miroir ment moins que la motivation. » — réalisme d'athlète",
+"« Une série de plus. Toujours une série de plus. » — mantra de fin de séance",
+"« La régularité est un sport de combat. » — adage moderne",
+"« Personne n'a jamais regretté une séance terminée. » — théorème imbattable",
+"« Le repos fait partie du programme, la paresse non. » — nuance capitale",
+"« Deviens le genre de personne que ton chien croit que tu es : infatigable. » — sagesse canine",
+"« Les abdos s'écrivent en cuisine et se signent en salle. » — diététique populaire",
+"« Un grand pouvoir implique de grandes courbatures. » — oncle Ben, version salle de sport",
+"« Le corps atteint ce que l'esprit répète. » — principe d'entraînement mental",
+"« Je n'ai pas de talent, j'ai des habitudes. » — aveu de champion",
+"« La flemme est un sprinteur, la discipline un marathonien. » — course inégale",
+"« Chaque rep t'éloigne de l'ancien toi. » — arithmétique du progrès",
+"« Le lundi est le jour préféré des futurs champions. » — statistique inventée mais vraie",
+"« Souffle, gaine, pousse. Le reste est littérature. » — technique résumée",
+"« La montagne ne vient pas à toi, et l'haltère non plus. » — Mahomet, version fitness",
+"« Qui veut la fin veut les moyens ; qui veut les épaules veut les élévations. » — logique implacable",
+"« Il n'y a pas de mauvaise météo pour un rameur d'intérieur. » — avantage stratégique",
+"« Ta seule compétition dort dans ton lit chaque nuit. » — rivalité intime",
+"« Le physique d'été se construit en hiver. » — calendrier du sage",
+"« Un jour tu ne pourras plus t'entraîner. Aujourd'hui n'est pas ce jour. » — memento mori sportif",
+"« Vise la constance, la performance suivra en courant. » — ordre des priorités",
+"« Le gainage, c'est de l'immobilité qui fait avancer. » — paradoxe utile",
+"« Faible n'est pas ton état, c'est ton point de départ. » — recadrage nécessaire",
+"« Chaque record est une porte : derrière, un autre record. » — couloir infini",
+"« La sueur est le maquillage des guerriers. » — cosmétique de salle",
+"« Compte tes séances, pas tes excuses. » — comptabilité simplifiée",
+"« Être fort est un choix qu'on refait tous les matins. » — élection quotidienne",
+"« Le canapé est un sport d'équipe : n'y joue pas seul. » — mise en garde",
+"« On rate 100% des records qu'on ne tente pas. » — Gretzky, adapté à l'erg",
+"« Fais-le fatigué, tu le referas frais. » — pédagogie de l'effort",
+"« Une bonne séance règle 80% des problèmes du jour. » — thérapie à haltères",
+"« Le futur appartient à ceux qui s'échauffent tôt. » — proverbe remixé",
+"« La force ne crie pas, elle s'accumule. » — discrétion efficace",
+"« Sois le CEO de tes quadriceps. » — gouvernance corporelle",
+"« Un homme hydraté est un homme dangereux. » — menace aqueuse",
+"« Chaque planche te rapproche du marbre. » — sculpture en cours",
+"« Le talent, c'est de la répétition déguisée. » — révélation tardive",
+"« Négliger les jambes est un crime dont le miroir est témoin. » — justice esthétique",
+"« La douleur d'aujourd'hui est l'anecdote de demain. » — futur récit de vestiaire",
+"« On n'hérite pas d'un physique, on l'emprunte à son effort. » — patrimoine musculaire",
+"« Chaque matin, la balance distribue les cartes ; l'entraînement les joue. » — poker corporel",
+"« Le deload est le dividende du travail acharné. » — finance de la récupération",
+"« Un rameur t'attend. Ne fais pas attendre un rameur. » — politesse élémentaire",
+"« Le corps est le seul portefeuille qu'on ne peut pas déléguer. » — gestion active obligatoire",
+"« Les excuses brûlent zéro calorie. » — thermodynamique implacable",
+"« Grinder une séance vaut mieux que planifier dix. » — exécution avant stratégie",
+"« Ton corps encaisse tout ce que tu déposes : muscle ou regret. » — banque biologique",
+"« Le sport rend humble le lundi et fier le dimanche. » — cycle hebdomadaire",
+"« Qui tient sa planche tient sa journée. » — gainage existentiel",
+"« La constance transforme l'ordinaire en extraordinaire. » — alchimie lente",
+"« Sois plus régulier que tes notifications. » — défi moderne",
+"« Le premier rep est mental, les autres sont cadeaux. » — démarrage difficile",
+"« Un physique se construit comme une cathédrale : pierre par pierre, sans se presser. » — architecture du muscle",
+"« L'effort est le seul impôt dont on garde 100% des bénéfices. » — fiscalité avantageuse",
+"« Rame comme si la Seine te regardait. » — orgueil parisien",
+"« Ta forme de décembre te remerciera pour ton août. » — lettre au futur",
+"« Les grandes transformations commencent par de petits rendez-vous tenus. » — ponctualité payante",
+"« Le muscle oublie vite, rappelle-lui souvent. » — mémoire courte",
+"« Il y a deux types de douleur : celle qui blesse et celle qui construit. Choisis bien. » — discernement d'athlète",
+"« Fais de ton corps un endroit où il fait bon vivre. » — immobilier intérieur",
+"« Le sport ne ment jamais : tu récoltes exactement ce que tu sèmes. » — agriculture honnête",
+"« Un champion, c'est quelqu'un qui s'est relevé une fois de plus. » — arithmétique de la chute",
+"« La graisse part en silence quand la discipline parle fort. » — négociation gagnée",
+"« Chaque séance est un vote pour la personne que tu veux devenir. » — démocratie personnelle",
+"« Le confort est une jolie prison. » — évasion recommandée",
+"« Deviens ingérable pour tes anciennes limites. » — insubordination productive",
+"« Vieillir est obligatoire, rouiller est optionnel. » — mécanique préventive",
+"« Personne ne peut faire tes pompes à ta place. C'est la beauté du truc. » — souveraineté totale",
+"« Le rameur ne te juge pas, il te mesure. C'est pire. » — objectivité de la machine",
+"« Chaque goutte de sueur nettoie une excuse. » — détergent naturel",
+"« Ce que tu répètes en secret finit par se voir en public. » — révélation musculaire",
+"« La motivation est un feu de paille ; l'habitude, un feu de cheminée. » — chauffage durable",
+"« Sois patient avec les résultats, impatient avec les efforts. » — répartition de l'urgence",
+"« Le corps humain est la seule machine qui s'use quand on ne s'en sert pas. » — paradoxe biologique",
+"« Une heure de sport, c'est 4% de ta journée. Le calcul est vite fait. » — mathématiques imparables",
+"« Les records tombent toujours devant ceux qui reviennent. » — loi de l'assiduité",
+"« Traite chaque échauffement comme une promesse. » — engagement liminaire",
+"« Le succès sent la transpiration séchée. » — parfum de victoire",
+"« On ne compte pas les jours, on fait que les jours comptent. » — Muhammad Ali"
 ];
 const TIPS = [
 "Développé couché : coudes à 45° du buste, jamais perpendiculaires — tes épaules te remercieront.",
@@ -995,6 +1111,40 @@ function checkRaceRecord(b){
   return false;
 }
 
+
+/* ---------- Le Bookmaker : cote sur chaque tentative de record ---------- */
+function bookOdds(dist){
+  const rec=S.raceRecords[dist];
+  if(!rec) return null;
+  let p=0.25;
+  const fs=formScore().score;
+  p*=(0.6+fs/100*0.9);
+  const r=acwr();
+  if(r!==null){ if(r>1.5)p*=0.6; else if(r>1.3)p*=0.85; else if(r<0.8)p*=0.9; }
+  if(isDeload(todayIso())) p*=0.5;
+  const day=S.days[todayIso()];
+  if(day&&day.reg) p*=0.7;
+  const age=Math.round((fromIso(todayIso())-fromIso(rec.date))/86400000);
+  p*=Math.min(1.6, 1+age/90*0.3);
+  const cut=addDays(todayIso(),-14);
+  let mom=0;
+  Object.values(S.raceRecords).forEach(x=>{if(x.date&&x.date>=cut)mom++;});
+  Object.values(S.prs).forEach(x=>{if(x.date&&x.date>=cut)mom++;});
+  p*=Math.min(1.35, 1+mom*0.05);
+  let lastRow=null;
+  Object.keys(S.days).sort().forEach(d=>{(S.days[d].blocks||[]).forEach(b=>{if(b.exId&&b.exId.startsWith("rameur")&&(b.status==="fait"||b.status==="partiel"))lastRow=d;});});
+  if(lastRow){const g=Math.round((fromIso(todayIso())-fromIso(lastRow))/86400000); if(g>=7)p*=0.75; else if(g<=2)p*=1.05;}
+  p=Math.max(0.02, Math.min(0.75, p));
+  const raw=Math.max(1.05, 0.95/p);
+  const o=raw<10? Math.round(raw*10)/10 : Math.round(raw);
+  let label;
+  if(o<2) label="🔥 favori — le book te voit passer";
+  else if(o<4) label="🎯 jouable — belle value si tu es dans un bon jour";
+  else if(o<8) label="😤 outsider — il faudra un vrai coup de rame";
+  else label="🚀 exploit — cote de folie, gloire éternelle si ça passe";
+  return {odds:o, label, p};
+}
+function fmtOdds(o){ return String(o).replace(".",","); }
 /* ---------- Voix ---------- */
 function say(t){
   if(!S||S.settings.voice===false) return;
@@ -1372,6 +1522,7 @@ function showMonthly(ymS){
     +tile(ms.dW===null?"—":(ms.dW>0?"+":"")+ms.dW.toFixed(1)+" kg","Poids sur le mois")
     +tile(ms.dMG===null?"—":(ms.dMG>0?"+":"")+ms.dMG.toFixed(1)+" pt","Masse grasse")
     +'</div>'
+    +fundMonthReport(ymS)
     +'<div class="banner '+(ms.boss?"info":"warn")+'"><b>'+(ms.boss?"🏆 Boss du mois vaincu":"🐉 Boss du mois non vaincu")+'</b>'
     +(ms.troph?ms.troph+" trophée"+(ms.troph>1?"s":"")+" débloqué"+(ms.troph>1?"s":"")+" ce mois-ci.":"Aucun trophée ce mois-ci — la vitrine attend.")+'</div>'
     +'<button class="btn primary" style="width:100%;margin-top:6px" onclick="closeModal()">Fermer</button></div></div>';
@@ -1385,6 +1536,212 @@ function maybeMonthly(){
   const any=Object.keys(S.days).some(d=>d.startsWith(prev));
   S.lastMonthly=cur; save();
   if(any) showMonthly(prev);
+}
+
+/* ---------- MARC 2.0 BODY FUND : NAV corporelle & poches musculaires ---------- */
+const FUND_POCKETS=[
+  {id:"pecs",    name:"Pectoraux",    emoji:"🛡️"},
+  {id:"epaules", name:"Épaules",      emoji:"🏔️"},
+  {id:"bras",    name:"Bras",         emoji:"💪"},
+  {id:"dos",     name:"Dos",          emoji:"🦅"},
+  {id:"jambes",  name:"Jambes",       emoji:"🦵"},
+  {id:"fessiers",name:"Fessiers",     emoji:"🍑"},
+  {id:"gainage", name:"Gainage",      emoji:"🗿"},
+  {id:"cardio",  name:"Moteur Cardio",emoji:"🚣"}
+];
+function pocketsFor(ex){
+  const n=(ex.name||"").toLowerCase(), c=ex.cat;
+  if(c==="Cardio"||n.includes("rameur")||n.includes("tennis")) return ["cardio"];
+  if(n.includes("pompes")) return ["pecs","bras"];
+  if(c==="Poussée"){
+    if(n.includes("militaire")||n.includes("arnold")||n.includes("elevation")||n.includes("élévation")) return ["epaules"];
+    if(n.includes("triceps")||n.includes("kickback")) return ["bras"];
+    return ["pecs"];
+  }
+  if(c==="Tirage"){
+    if(n.includes("curl")) return ["bras"];
+    return ["dos"];
+  }
+  if(c==="Jambes/Fessiers"){
+    if(n.includes("hip")) return ["fessiers"];
+    if(n.includes("fente")||n.includes("sumo")||n.includes("souleve")||n.includes("soulevé")) return ["jambes","fessiers"];
+    if(n.includes("mollets")) return ["jambes"];
+    return ["jambes"];
+  }
+  if(c==="Gainage") return ["gainage"];
+  if(c==="Corps Entier") return ["epaules","dos","jambes"];
+  return ["gainage"];
+}
+function toDateMap(series){ const m={}; series.forEach(p=>m[p.d]=p.v); return m; }
+function fundSeries(){
+  const dayKeys=Object.keys(S.days).sort();
+  if(!dayKeys.length) return null;
+  const start=dayKeys[0], today=todayIso();
+  const prices={}, lastHit={};
+  FUND_POCKETS.forEach(p=>{prices[p.id]=100;lastHit[p.id]=start;});
+  const prByDate={};
+  Object.entries(S.prs).forEach(([id,pr])=>{
+    if(!pr.date) return;
+    const ex=exById(id); if(!ex) return;
+    (prByDate[pr.date]=prByDate[pr.date]||[]).push(...pocketsFor(ex));
+  });
+  Object.entries(S.raceRecords).forEach(([d,r])=>{ if(r.date)(prByDate[r.date]=prByDate[r.date]||[]).push("cardio"); });
+  const wM=toDateMap(interpolate(healthSeries("poids")));
+  const fcM=toDateMap(interpolate(healthSeries("fc")));
+  const mgM=toDateMap(interpolate(healthSeries("mg")));
+  let healthMult=1, prevW=null, prevFc=null, prevMg=null;
+  const out=[];
+  let d=start;
+  while(d<=today){
+    const day=S.days[d];
+    const vol={}; 
+    if(day)(day.blocks||[]).forEach(b=>{
+      if(b.status!=="fait"&&b.status!=="partiel") return;
+      const ex=exById(b.exId); if(!ex) return;
+      const f=b.status==="partiel"?0.5:1;
+      let load=0;
+      if(ex.ut==="sets") load=f*(b.sets||[]).reduce((a,s)=>a+(Number(s.kg)||0)*(Number(s.reps)||0),0);
+      else if(ex.ut==="sec") load=f*(Number(b.sec)||0)*2;
+      else if(ex.ut==="nb") load=f*(Number(b.nb)||0)*3;
+      else load=f*(Number(b.min)||0)*12;
+      const pk=pocketsFor(ex);
+      pk.forEach(pid=>{vol[pid]=(vol[pid]||0)+load/pk.length;});
+    });
+    FUND_POCKETS.forEach(p=>{
+      let ret=0;
+      const v=vol[p.id]||0;
+      if(v>0){ ret+=Math.min(0.028, Math.log1p(v/300)*0.022); lastHit[p.id]=d; }
+      else { const gap=Math.round((fromIso(d)-fromIso(lastHit[p.id]))/86400000); if(gap>4) ret-=0.004; }
+      if((prByDate[d]||[]).includes(p.id)) ret+=0.02;
+      prices[p.id]=Math.max(40, Math.min(400, prices[p.id]*(1+ret)));
+    });
+    let macro=0;
+    if(wM[d]!==undefined){ if(prevW!==null) macro+=(prevW-wM[d])*0.006; prevW=wM[d]; }
+    if(fcM[d]!==undefined){ if(prevFc!==null) macro+=(prevFc-fcM[d])*0.0012; prevFc=fcM[d]; }
+    if(mgM[d]!==undefined){ if(prevMg!==null) macro+=(prevMg-mgM[d])*0.004; prevMg=mgM[d]; }
+    healthMult=Math.max(0.6, Math.min(1.8, healthMult*(1+macro)));
+    const base=FUND_POCKETS.reduce((a,p)=>a+prices[p.id],0)/FUND_POCKETS.length;
+    out.push({d, nav:Number((base*healthMult).toFixed(2)), pockets:{...prices}, hm:healthMult});
+    d=addDays(d,1);
+  }
+  return out;
+}
+function fundPerf(series,nDays){
+  if(!series||series.length<2) return null;
+  const last=series[series.length-1];
+  const idx=Math.max(0, series.length-1-nDays);
+  const ref=series[idx];
+  if(!ref||ref.nav===0) return null;
+  return (last.nav/ref.nav-1)*100;
+}
+function fundDrawdown(series){
+  let peak=-Infinity, dd=0, from=null, peakD=null, ddFrom=null, ddTo=null;
+  series.forEach(p=>{
+    if(p.nav>peak){peak=p.nav;peakD=p.d;}
+    const cur=(p.nav/peak-1)*100;
+    if(cur<dd){dd=cur;ddFrom=peakD;ddTo=p.d;}
+  });
+  return {dd, from:ddFrom, to:ddTo};
+}
+function fundVol(series,nDays){
+  const s=series.slice(-nDays-1);
+  if(s.length<8) return null;
+  const rets=[];
+  for(let i=1;i<s.length;i++) rets.push(s[i].nav/s[i-1].nav-1);
+  const mean=rets.reduce((a,b)=>a+b,0)/rets.length;
+  const varr=rets.reduce((a,b)=>a+(b-mean)*(b-mean),0)/rets.length;
+  return Math.sqrt(varr)*Math.sqrt(365)*100;
+}
+function pocketPerf(series,pid,nDays){
+  if(!series||series.length<2) return null;
+  const last=series[series.length-1].pockets[pid];
+  const idx=Math.max(0, series.length-1-nDays);
+  const ref=series[idx].pockets[pid];
+  if(!ref) return null;
+  return (last/ref-1)*100;
+}
+function fmtPct(v){ if(v===null||v===undefined) return "—"; const s=v>=0?"+":"−"; return s+Math.abs(v).toFixed(1).replace(".",",")+"%"; }
+function statsFund(){
+  const series=fundSeries();
+  if(!series||series.length<3) return '<div class="emptymsg">📈 Le Marc 2.0 Body Fund publie sa NAV après quelques jours d\u2019historique.<br>Valide des séances, la cote de ton corps fera le reste.</div>';
+  const last=series[series.length-1];
+  const d1=fundPerf(series,1), d7=fundPerf(series,7), d30=fundPerf(series,30), inception=(last.nav/100-1)*100;
+  const cls=v=>v===null?"flat":(v>=0?"up":"down");
+  let html='<div class="card" style="background:linear-gradient(150deg,#f0c53d14,var(--card) 55%);border-color:#f0c53d55">'
+    +'<div class="row between"><div><b style="font-size:1rem">📈 Marc 2.0 Body Fund</b>'
+    +'<div class="muted small">NAV quotidienne · base 100 à l\u2019origine</div></div>'
+    +'<div style="text-align:right"><div style="font-size:1.7rem;font-weight:800;color:var(--gold)">'+last.nav.toFixed(2).replace(".",",")+'</div>'
+    +'<div class="d '+cls(d1)+'">'+fmtPct(d1)+' aujourd\u2019hui</div></div></div></div>';
+  html+='<div class="tiles" style="margin-bottom:12px">'
+    +'<div class="tile"><div class="v '+cls(d7)+'">'+fmtPct(d7)+'</div><div class="l">7 jours</div></div>'
+    +'<div class="tile"><div class="v '+cls(d30)+'">'+fmtPct(d30)+'</div><div class="l">30 jours</div></div>'
+    +'<div class="tile"><div class="v '+cls(inception)+'">'+fmtPct(inception)+'</div><div class="l">Depuis création</div></div>';
+  const dd=fundDrawdown(series);
+  const vol=fundVol(series,30);
+  html+='<div class="tile"><div class="v down">'+(dd.dd<0?dd.dd.toFixed(1).replace(".",",")+"%":"0%")+'</div><div class="l">Drawdown max</div></div></div>';
+  const pts=series.map(p=>({d:p.d,v:p.nav}));
+  const dec=pts.length>180? pts.filter((_,i)=>i%2===0||i===pts.length-1):pts;
+  html+='<h2>📊 Courbe de NAV</h2><div class="card chartwrap">'+chartLines([{pts:dec,color:"#f0c53d",w:2.5}],{})
+    +(vol!==null?'<div class="muted small" style="margin-top:6px">Volatilité 30 j annualisée : '+vol.toFixed(1).replace(".",",")+'% — un fonds patrimonial, pas un memecoin.</div>':'')+'</div>';
+  html+='<h2>💼 Portefeuille par poche musculaire</h2><div class="card tight" style="overflow-x:auto"><table class="healthlist">'
+    +'<tr><th>Poche</th><th>Cours</th><th>30 j</th><th>Signal</th></tr>';
+  const rows=FUND_POCKETS.map(p=>{
+    const price=last.pockets[p.id];
+    const perf=pocketPerf(series,p.id,30);
+    return {p, price, perf};
+  }).sort((a,b)=>b.perf-a.perf);
+  const best=rows[0], worst=rows[rows.length-1];
+  rows.forEach(r=>{
+    let sig="—";
+    if(r===best&&r.perf>0) sig='<span style="color:var(--accent)">⭐ moteur du fonds</span>';
+    else if(r===worst&&r.perf<0) sig='<span style="color:var(--warn)">📉 à surpondérer</span>';
+    else if(r.perf<-2) sig='<span style="color:var(--warn)">décote — au travail</span>';
+    else if(r.perf>2) sig='<span style="color:var(--accent)">tendance haussière</span>';
+    html+='<tr><td>'+r.p.emoji+' <b>'+r.p.name+'</b></td>'
+      +'<td>'+r.price.toFixed(1).replace(".",",")+'</td>'
+      +'<td class="'+cls(r.perf)+'" style="font-weight:700">'+fmtPct(r.perf)+'</td>'
+      +'<td class="small">'+sig+'</td></tr>';
+  });
+  html+='</table></div>';
+  let advice;
+  if(worst.perf<-2) advice="Le gérant recommande de surpondérer la poche "+worst.p.name+" cette semaine : elle décote de "+Math.abs(worst.perf).toFixed(1).replace(".",",")+"% sur 30 jours, le point d\u2019entrée est idéal.";
+  else if(best.perf>4) advice="La poche "+best.p.name+" tire le fonds ("+fmtPct(best.perf)+" sur 30 j). Le gérant sécurise la tendance et surveille l\u2019équilibre des autres lignes.";
+  else advice="Portefeuille équilibré, aucune ligne en souffrance. Le gérant maintient l\u2019allocation et vise la régularité des versements (tes séances).";
+  html+='<div class="banner info"><b>🎩 Le mot du gérant</b>'+advice+'</div>';
+  return html;
+}
+function fundMonthReport(ymS){
+  const series=fundSeries();
+  if(!series||series.length<3) return "";
+  const inMonth=series.filter(p=>p.d.startsWith(ymS));
+  if(inMonth.length<2) return "";
+  const first=inMonth[0], last=inMonth[inMonth.length-1];
+  const perf=(last.nav/first.nav-1)*100;
+  const perfs=FUND_POCKETS.map(p=>{
+    const a=first.pockets[p.id], b=last.pockets[p.id];
+    return {p, perf:(b/a-1)*100};
+  }).sort((a,b)=>b.perf-a.perf);
+  const best=perfs[0], worst=perfs[perfs.length-1];
+  let peak=-Infinity, dd=0;
+  inMonth.forEach(x=>{ if(x.nav>peak)peak=x.nav; dd=Math.min(dd,(x.nav/peak-1)*100); });
+  const rets=[]; for(let i=1;i<inMonth.length;i++)rets.push(inMonth[i].nav/inMonth[i-1].nav-1);
+  const mean=rets.reduce((a,b)=>a+b,0)/rets.length;
+  const volM=Math.sqrt(rets.reduce((a,b)=>a+(b-mean)*(b-mean),0)/rets.length)*Math.sqrt(365)*100;
+  const cls=v=>v>=0?"up":"down";
+  let comment;
+  if(perf>=3) comment="Mois excellent : la stratégie (assiduité + progression de charges) délivre. Le gérant reconduit le mandat sans réserve.";
+  else if(perf>=0) comment="Performance positive dans un marché (ton agenda) parfois contraire. La gestion du risque (récupération, deload) a protégé le capital.";
+  else if(perf>=-3) comment="Léger repli : la NAV respire après la hausse. Le comité de gestion (toi, devant ton miroir) recommande de renforcer sur faiblesse dès lundi.";
+  else comment="Mois difficile : sous-investissement chronique en séances. Le gérant rappelle que les versements réguliers font la performance à long terme. Rachat interdit.";
+  return '<h3 style="margin:14px 0 8px">📈 Marc 2.0 Body Fund — Rapport de gestion</h3>'
+    +'<div class="tiles" style="margin-bottom:10px">'
+    +'<div class="tile"><div class="v '+cls(perf)+'">'+fmtPct(perf)+'</div><div class="l">Perf. du mois</div></div>'
+    +'<div class="tile"><div class="v">'+last.nav.toFixed(1).replace(".",",")+'</div><div class="l">NAV de clôture</div></div>'
+    +'<div class="tile"><div class="v up">'+best.p.emoji+' '+fmtPct(best.perf)+'</div><div class="l">Top : '+best.p.name+'</div></div>'
+    +'<div class="tile"><div class="v down">'+worst.p.emoji+' '+fmtPct(worst.perf)+'</div><div class="l">Flop : '+worst.p.name+'</div></div>'
+    +'<div class="tile"><div class="v">'+(dd<0?dd.toFixed(1).replace(".",",")+"%":"0%")+'</div><div class="l">Drawdown du mois</div></div>'
+    +'<div class="tile"><div class="v">'+volM.toFixed(1).replace(".",",")+'%</div><div class="l">Volatilité annualisée</div></div>'
+    +'</div><div class="banner info"><b>🎩 Commentaire du gérant</b>'+comment+'</div>';
 }
 /* ============================================================ VUES */
 let VIEW="today", CUR_DATE=todayIso(), STATS_TAB="forme", STATS_EX=null, HEALTH_EDIT=null;
@@ -1570,6 +1927,7 @@ function blockInputs(b,i,ex){
         if(rec) inputs+='<div class="lastperf">Ton record : '+fmtTime(rec.sec)+' ('+fmtShort(rec.date)+') · allure à battre : '+fmtTime(rec.sec/Number(b.race)*500)+' /500m 😈</div>';
         else inputs+='<div class="sugg">Première tentative sur cette distance — tout chrono devient LE record.</div>';
         if(erg) inputs+='<div class="sugg">🏆 Record Ergatta : '+fmtTime(erg.sec)+(rec&&rec.sec<erg.sec?' — déjà battu 👑':'')+'</div>';
+        if(rec){ const bo=bookOdds(Number(b.race)); if(bo) inputs+='<div class="presc">🎰 Cote du book : <b>'+fmtOdds(bo.odds)+'</b> — '+bo.label+'</div>'; }
       } else {
         inputs+='<div class="setrow"><span class="lbl">min</span><input type="number" inputmode="numeric" placeholder="minutes" value="'+(b.min||"")+'" onchange="blockVal('+i+',\'min\',this.value)"></div>'
           +'<div class="setrow"><span class="lbl">m</span><input type="number" inputmode="numeric" placeholder="distance (m)" value="'+(b.dist||"")+'" onchange="blockVal('+i+',\'dist\',this.value)"></div>';
@@ -1918,11 +2276,13 @@ function cmpSlide(v){
 function renderStats(){
   let html='<div class="seg">'
     +'<button class="'+(STATS_TAB==="forme"?"on":"")+'" onclick="STATS_TAB=\'forme\';render()">Forme</button>'
+    +'<button class="'+(STATS_TAB==="fund"?"on":"")+'" onclick="STATS_TAB=\'fund\';render()">Fund</button>'
     +'<button class="'+(STATS_TAB==="corps"?"on":"")+'" onclick="STATS_TAB=\'corps\';render()">Corps</button>'
     +'<button class="'+(STATS_TAB==="force"?"on":"")+'" onclick="STATS_TAB=\'force\';render()">Force</button>'
     +'<button class="'+(STATS_TAB==="cardio"?"on":"")+'" onclick="STATS_TAB=\'cardio\';render()">Cardio</button>'
     +'<button class="'+(STATS_TAB==="succes"?"on":"")+'" onclick="STATS_TAB=\'succes\';render()">Succès</button></div>';
   if(STATS_TAB==="forme")html+=statsForme();
+  else if(STATS_TAB==="fund")html+=statsFund();
   else if(STATS_TAB==="corps")html+=statsCorps();
   else if(STATS_TAB==="force")html+=statsForce();
   else if(STATS_TAB==="cardio")html+=statsCardio();
