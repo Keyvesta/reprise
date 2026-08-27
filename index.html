@@ -260,108 +260,128 @@ const HEALTH_FIELDS = [
 ];
 const RANKS = [
   {xp:0, name:"Larve de Canapé", emoji:"🛋️"},
-  {xp:35, name:"Limace du Salon", emoji:"🐌"},
-  {xp:71, name:"Ver de Terre Motivé", emoji:"🪱"},
-  {xp:109, name:"Pantoufle Ambitieuse", emoji:"🥿"},
-  {xp:149, name:"Stagiaire de l'Échauffement", emoji:"🥱"},
-  {xp:191, name:"Porteur d'Eau Officiel", emoji:"💧"},
-  {xp:235, name:"Compteur de Reps Débutant", emoji:"🔢"},
-  {xp:281, name:"Apprenti de la Fonte", emoji:"🔩"},
-  {xp:329, name:"Trotteur de Salon", emoji:"👟"},
-  {xp:380, name:"Écuyer de l'Haltère", emoji:"🛎️"},
-  {xp:433, name:"Recrue du Rameur", emoji:"🚣"},
-  {xp:489, name:"Soldat de la Sueur", emoji:"🥵"},
-  {xp:548, name:"Caporal des Courbatures", emoji:"🤕"},
-  {xp:610, name:"Caporal-Chef du Cardio", emoji:"🫀"},
-  {xp:675, name:"Sergent des Squats", emoji:"🦵"},
-  {xp:743, name:"Sergent-Chef du Gainage", emoji:"🧱"},
-  {xp:814, name:"Adjudant des Abdos", emoji:"🍫"},
-  {xp:889, name:"Adjudant-Chef des Fentes", emoji:"🚶"},
-  {xp:967, name:"Aspirant du Développé", emoji:"📈"},
-  {xp:1049, name:"Lieutenant du Lest", emoji:"🎖️"},
-  {xp:1134, name:"Capitaine Cardio", emoji:"⛵"},
-  {xp:1223, name:"Commandant du Gainage", emoji:"🛡️"},
-  {xp:1316, name:"Major de la Fonte", emoji:"🏋️"},
-  {xp:1412, name:"Lieutenant-Colonel du Curl", emoji:"💪"},
-  {xp:1512, name:"Colonel des Pectoraux", emoji:"🦍"},
-  {xp:1616, name:"Général de la Suée", emoji:"⚔️"},
-  {xp:1724, name:"Général d'Armée des Haltères", emoji:"🎖"},
-  {xp:1836, name:"Maréchal du Muscle", emoji:"🏛️"},
-  {xp:1952, name:"Vétéran du Vestiaire", emoji:"🧢"},
-  {xp:2072, name:"Instructeur des Novices", emoji:"📣"},
-  {xp:2197, name:"Gladiateur du Garage", emoji:"🏟️"},
-  {xp:2326, name:"Rétiaire du Rameur", emoji:"🔱"},
-  {xp:2459, name:"Centurion du Salon", emoji:"🗡️"},
-  {xp:2597, name:"Légionnaire du Lest", emoji:"🪖"},
-  {xp:2739, name:"Prétorien de la Planche", emoji:"🛡"},
-  {xp:2886, name:"Champion du Colisée Domestique", emoji:"🏺"},
-  {xp:3037, name:"Spartiate d'Appartement", emoji:"⚱️"},
-  {xp:3193, name:"Hoplite des Haltères", emoji:"🏹"},
-  {xp:3354, name:"Titan du Tapis", emoji:"🌋"},
-  {xp:3519, name:"Colosse du Couloir", emoji:"🗿"},
-  {xp:3689, name:"Écuyer Anobli", emoji:"🐎"},
-  {xp:3864, name:"Chevalier de la Fonte", emoji:"♞"},
-  {xp:4044, name:"Banneret du Biceps", emoji:"🚩"},
-  {xp:4229, name:"Baronnet de la Barre", emoji:"📯"},
-  {xp:4419, name:"Baron de la Barre", emoji:"🎩"},
-  {xp:4614, name:"Vicomte du Volume", emoji:"🧐"},
-  {xp:4814, name:"Comte du Cardio", emoji:"🍷"},
-  {xp:5019, name:"Marquis du Mollet", emoji:"🥾"},
-  {xp:5229, name:"Duc du Développé", emoji:"🐂"},
-  {xp:5444, name:"Grand-Duc du Deltoïde", emoji:"🦌"},
-  {xp:5665, name:"Archiduc des Haltères", emoji:"🦂"},
-  {xp:5891, name:"Prince du Protéiné", emoji:"🥩"},
-  {xp:6122, name:"Prince Héritier de l'Effort", emoji:"👔"},
-  {xp:6359, name:"Vice-Roi du Vestiaire", emoji:"🎗️"},
-  {xp:6601, name:"Roi du Rameur", emoji:"⚜️"},
-  {xp:6849, name:"Roi Soleil du Squat", emoji:"🌞"},
-  {xp:7102, name:"Empereur de l'Effort", emoji:"🏛"},
-  {xp:7361, name:"Imperator des Intervalles", emoji:"🦅"},
-  {xp:7625, name:"Tsar de la Transpiration", emoji:"❄️"},
-  {xp:7895, name:"Sultan de la Série", emoji:"🕌"},
-  {xp:8171, name:"Pharaon de la Forme", emoji:"🐪"},
-  {xp:8452, name:"Négus du Négatif", emoji:"👑"},
-  {xp:8739, name:"Kaiser du Kettlebell", emoji:"🪙"},
-  {xp:9032, name:"Shah du Shrug", emoji:"💎"},
-  {xp:9331, name:"Padawan Repenti", emoji:"🌱"},
-  {xp:9636, name:"Disciple du Dojo", emoji:"🥋"},
-  {xp:9947, name:"Ceinture Noire du Bureau", emoji:"🖤"},
-  {xp:10264, name:"Sensei de la Sueur", emoji:"🍵"},
-  {xp:10587, name:"Ninja des Nuobell", emoji:"🥷"},
-  {xp:10916, name:"Samouraï du Split", emoji:"🗡"},
-  {xp:11251, name:"Ronin du Rameur", emoji:"🌊"},
-  {xp:11592, name:"Shogun du Shaker", emoji:"🍶"},
-  {xp:11939, name:"Moine Shaolin du Salon", emoji:"🧘"},
-  {xp:12292, name:"Maître Dragon du Gainage", emoji:"🐉"},
-  {xp:12651, name:"Grand Sage de la Fonte", emoji:"🧙"},
-  {xp:13017, name:"Oracle de l'Ergatta", emoji:"🔮"},
-  {xp:13389, name:"Alchimiste du Cardio", emoji:"⚗️"},
-  {xp:13767, name:"Druide du Deload", emoji:"🌿"},
-  {xp:14152, name:"Archimage des Abdos", emoji:"✨"},
-  {xp:14543, name:"Nécromancien du Négatif", emoji:"🦴"},
-  {xp:14940, name:"Chasseur de Records", emoji:"🎯"},
-  {xp:15344, name:"Dompteur de Boss", emoji:"🦁"},
-  {xp:15754, name:"Gardien du Temple (ton salon)", emoji:"⛩️"},
-  {xp:16171, name:"Héros aux Mille Séances", emoji:"📜"},
-  {xp:16594, name:"Demi-Titan de l'Aube", emoji:"🌅"},
-  {xp:17024, name:"Fils Caché d'Héraclès", emoji:"🏹"},
-  {xp:17461, name:"Cousin Éloigné d'Achille", emoji:"🦶"},
-  {xp:17904, name:"Argonaute de l'Ergatta", emoji:"⛵"},
-  {xp:18354, name:"Prométhée du Protéiné", emoji:"🔥"},
-  {xp:18811, name:"Atlas du Living-Room", emoji:"🌍"},
-  {xp:19274, name:"Poséidon du Rameur", emoji:"🌊"},
-  {xp:19744, name:"Arès de l'Haltère", emoji:"⚔"},
-  {xp:20221, name:"Hermès des Fentes Marchées", emoji:"🪽"},
-  {xp:20705, name:"Apollon du Miroir", emoji:"🌞"},
-  {xp:21196, name:"Zeus du Zercher", emoji:"⚡"},
-  {xp:21694, name:"Immortel de l'Intervalle", emoji:"🧬"},
-  {xp:22199, name:"Machine Biomécanique", emoji:"🤖"},
-  {xp:22711, name:"Demi-Dieu du Deload", emoji:"🌩️"},
-  {xp:23230, name:"Légende Vivante du Vestiaire", emoji:"🏆"},
-  {xp:23756, name:"Mythe Absolu du Miroir", emoji:"👑"}
+  {xp:122, name:"Limace Sous Plaid", emoji:"🐌"},
+  {xp:247, name:"Spécialiste du Bouton Snooze", emoji:"⏰"},
+  {xp:376, name:"Athlète de Télécommande", emoji:"📺"},
+  {xp:508, name:"Pantoufle Ambitieuse", emoji:"🥿"},
+  {xp:644, name:"Croissant de Compétition", emoji:"🥐"},
+  {xp:784, name:"Randonneur Frigo-Canapé", emoji:"🧊"},
+  {xp:928, name:"Stagiaire de l'Échauffement", emoji:"🥱"},
+  {xp:1076, name:"Porteur d'Eau (le Sien)", emoji:"💧"},
+  {xp:1228, name:"Déplieur de Tapis Officiel", emoji:"🧻"},
+  {xp:1384, name:"Compteur de Reps des Autres", emoji:"🔢"},
+  {xp:1544, name:"Apprenti de la Fonte", emoji:"🔩"},
+  {xp:1709, name:"Gonfleur de Ballons Promu", emoji:"🎈"},
+  {xp:1878, name:"Trotteur de Couloir", emoji:"👟"},
+  {xp:2052, name:"Écuyer de l'Haltère Rose", emoji:"🛎️"},
+  {xp:2230, name:"Matelot d'Eau Douce", emoji:"⛵"},
+  {xp:2413, name:"Recrue de l'Ergatta", emoji:"🚣"},
+  {xp:2600, name:"Bizut de la Planche", emoji:"📏"},
+  {xp:2792, name:"Soldat de la Sueur", emoji:"🥵"},
+  {xp:2988, name:"Caporal des Courbatures", emoji:"🤕"},
+  {xp:3189, name:"Caporal-Chef du Cardio Timide", emoji:"🫀"},
+  {xp:3395, name:"Sergent des Squats Hésitants", emoji:"🦵"},
+  {xp:3605, name:"Sergent-Chef du Gainage", emoji:"🧱"},
+  {xp:3820, name:"Adjudant des Abdos Invisibles", emoji:"🍫"},
+  {xp:4040, name:"Aspirant du Développé Modeste", emoji:"📈"},
+  {xp:4265, name:"Lieutenant du Lest Léger", emoji:"🎖️"},
+  {xp:4495, name:"Capitaine Cardio", emoji:"⛵"},
+  {xp:4730, name:"Commandant du Gainage", emoji:"🛡️"},
+  {xp:4970, name:"Major de la Fonte", emoji:"🏋️"},
+  {xp:5214, name:"Lieutenant-Colonel du Curl", emoji:"💪"},
+  {xp:5463, name:"Colonel des Pectoraux Naissants", emoji:"🦍"},
+  {xp:5717, name:"Général de la Suée", emoji:"⚔️"},
+  {xp:5976, name:"Maréchal du Muscle", emoji:"🏛️"},
+  {xp:6240, name:"Vétéran du Vestiaire", emoji:"🧢"},
+  {xp:6510, name:"Instructeur des Limaces (Ex-Collègues)", emoji:"📣"},
+  {xp:6785, name:"Videur de Boîte (de Nuit de Sommeil)", emoji:"🚪"},
+  {xp:7065, name:"Gladiateur du Garage", emoji:"🏟️"},
+  {xp:7350, name:"Rétiaire du Rameur", emoji:"🔱"},
+  {xp:7640, name:"Centurion du Salon", emoji:"🗡️"},
+  {xp:7935, name:"Légionnaire du Lest", emoji:"🪖"},
+  {xp:8235, name:"Prétorien de la Planche", emoji:"🛡"},
+  {xp:8541, name:"Champion du Colisée Domestique", emoji:"🏺"},
+  {xp:8852, name:"Spartiate d'Appartement", emoji:"⚱️"},
+  {xp:9168, name:"Hoplite des Haltères", emoji:"🏹"},
+  {xp:9489, name:"Léonidas du Living", emoji:"🦁"},
+  {xp:9816, name:"Titan du Tapis de Sol", emoji:"🌋"},
+  {xp:10148, name:"Colosse de Rhodes (Arrondissement)", emoji:"🗿"},
+  {xp:10485, name:"Minotaure du Mètre Carré", emoji:"🐂"},
+  {xp:10828, name:"Écuyer Anobli par la Sueur", emoji:"🐎"},
+  {xp:11176, name:"Chevalier de la Fonte", emoji:"♞"},
+  {xp:11529, name:"Croisé du Cardio", emoji:"✝️"},
+  {xp:11888, name:"Templier du Tirage", emoji:"🏰"},
+  {xp:12252, name:"Banneret du Biceps", emoji:"🚩"},
+  {xp:12621, name:"Baronnet de la Barre", emoji:"📯"},
+  {xp:12996, name:"Baron de la Barre", emoji:"🎩"},
+  {xp:13376, name:"Vicomte du Volume", emoji:"🧐"},
+  {xp:13762, name:"Comte du Cardio", emoji:"🍷"},
+  {xp:14153, name:"Marquis du Mollet Saillant", emoji:"🥾"},
+  {xp:14550, name:"Duc du Développé", emoji:"🐂"},
+  {xp:14952, name:"Grand-Duc du Deltoïde", emoji:"🦌"},
+  {xp:15360, name:"Archiduc des Haltères", emoji:"🦂"},
+  {xp:15773, name:"Prince du Protéiné", emoji:"🥩"},
+  {xp:16192, name:"Dauphin du Deload", emoji:"🐬"},
+  {xp:16616, name:"Vice-Roi du Vestiaire", emoji:"🎗️"},
+  {xp:17046, name:"Roi du Rameur", emoji:"⚜️"},
+  {xp:17482, name:"Roi Soleil du Squat", emoji:"🌞"},
+  {xp:17923, name:"Empereur de l'Effort", emoji:"🏛"},
+  {xp:18370, name:"Imperator des Intervalles", emoji:"🦅"},
+  {xp:18822, name:"Tsar de la Transpiration", emoji:"❄️"},
+  {xp:19280, name:"Sultan de la Série Longue", emoji:"🕌"},
+  {xp:19744, name:"Pharaon de la Forme", emoji:"🐪"},
+  {xp:20213, name:"Négus du Négatif Contrôlé", emoji:"👑"},
+  {xp:20688, name:"Kaiser du Kettlebell Imaginaire", emoji:"🪙"},
+  {xp:21169, name:"Shah du Shrug", emoji:"💎"},
+  {xp:21655, name:"Maharadjah du Mollet", emoji:"🐘"},
+  {xp:22147, name:"Émir de l'Échauffement Parfait", emoji:"🌙"},
+  {xp:22645, name:"Padawan Repenti", emoji:"🌱"},
+  {xp:23149, name:"Disciple du Dojo Domestique", emoji:"🥋"},
+  {xp:23658, name:"Ceinture Noire de Télétravail", emoji:"🖤"},
+  {xp:24173, name:"Sensei de la Sueur", emoji:"🍵"},
+  {xp:24694, name:"Ninja des Nuobell", emoji:"🥷"},
+  {xp:25221, name:"Samouraï du Split", emoji:"🗡"},
+  {xp:25753, name:"Ronin du Rameur", emoji:"🌊"},
+  {xp:26291, name:"Shogun du Shaker", emoji:"🍶"},
+  {xp:26835, name:"Moine Shaolin du Salon", emoji:"🧘"},
+  {xp:27385, name:"Maître Dragon du Gainage", emoji:"🐉"},
+  {xp:27941, name:"Yogi du Yoyo Pondéral (Vaincu)", emoji:"☯️"},
+  {xp:28502, name:"Grand Sage de la Fonte", emoji:"🧙"},
+  {xp:29069, name:"Oracle de l'Ergatta", emoji:"🔮"},
+  {xp:29642, name:"Alchimiste du Cardio", emoji:"⚗️"},
+  {xp:30221, name:"Druide du Deload", emoji:"🌿"},
+  {xp:30806, name:"Archimage des Abdos", emoji:"✨"},
+  {xp:31397, name:"Nécromancien du Négatif", emoji:"🦴"},
+  {xp:31994, name:"Enchanteur de l'Échauffement", emoji:"🪄"},
+  {xp:32597, name:"Paladin de la Planche", emoji:"⚜"},
+  {xp:33206, name:"Berserker du Burpee Évité", emoji:"🪓"},
+  {xp:33820, name:"Chasseur de Records Assermenté", emoji:"🎯"},
+  {xp:34440, name:"Dompteur de Boss Mensuels", emoji:"🦁"},
+  {xp:35066, name:"Gardien du Temple (ton Salon)", emoji:"⛩️"},
+  {xp:35698, name:"Héros aux Mille Séances", emoji:"📜"},
+  {xp:36336, name:"Demi-Titan de l'Aube", emoji:"🌅"},
+  {xp:36980, name:"Fils Caché d'Héraclès", emoji:"🏹"},
+  {xp:37630, name:"Cousin Éloigné d'Achille (Talon Solide)", emoji:"🦶"},
+  {xp:38286, name:"Argonaute de l'Ergatta", emoji:"🛶"},
+  {xp:38948, name:"Prométhée du Protéiné", emoji:"🔥"},
+  {xp:39616, name:"Atlas du Living-Room", emoji:"🌍"},
+  {xp:40290, name:"Poséidon du Rameur", emoji:"🌊"},
+  {xp:40970, name:"Arès de l'Haltère", emoji:"⚔"},
+  {xp:41656, name:"Hermès des Fentes Marchées", emoji:"🪽"},
+  {xp:42348, name:"Apollon du Miroir de l'Entrée", emoji:"🌞"},
+  {xp:43046, name:"Zeus du Zercher", emoji:"⚡"},
+  {xp:43750, name:"Chuck Norris du 6e Arrondissement", emoji:"🤠"},
+  {xp:44460, name:"Immortel de l'Intervalle", emoji:"🧬"},
+  {xp:45177, name:"Machine Biomécanique Homologuée", emoji:"🤖"},
+  {xp:45900, name:"Demi-Dieu du Deload", emoji:"🌩️"},
+  {xp:46629, name:"Anomalie Statistique Ambulante", emoji:"📊"},
+  {xp:47364, name:"Légende Vivante du Vestiaire", emoji:"🏆"},
+  {xp:48105, name:"Patrimoine Mondial de l'UNESCO (Catégorie Physique)", emoji:"🏛️"},
+  {xp:48852, name:"Mythe Absolu du Miroir", emoji:"👑"},
+  {xp:49605, name:"Boss Final de la Remise en Forme", emoji:"👾"}
 ];
 function rankFor(xp){ let r=0; RANKS.forEach((rk,i)=>{ if(xp>=rk.xp) r=i; }); return r; }
-function rankTier(){ return Math.min(2, Math.floor(rankFor(S.xp||0)/34)); }
+function rankTier(){ return Math.min(2, Math.floor(rankFor(S.xp||0)/40)); }
 const XP = { fait:10, partiel:5, water:5, supp:5, pr:25, dayComplete:20, longRow:15, boss:150, trophy:40, measure:3 };
 const TROPHIES = [
   {id:"first_pr",   emoji:"⭐", name:"Première Pierre", desc:"Battre son tout premier record", hint:"Tout empire commence quelque part…", c:x=>x.recTotal>=1},
@@ -491,7 +511,40 @@ const TROPHIES = [
   {id:"tennis20", emoji:"🏸", name:"Abonné du Club", desc:"20 séances de tennis validées", hint:"Ta 2e série se souvient de toi…", c:x=>x.st.tennis>=20},
   {id:"xp2500", emoji:"🎮", name:"Farmeur d'XP", desc:"2 500 XP accumulés", hint:"Le grind paie toujours…", c:x=>x.xp>=2500},
   {id:"xp10000",emoji:"🕹️", name:"No-Life de la Forme", desc:"10 000 XP accumulés", hint:"Sauf que cette vie-là est la vraie…", c:x=>x.xp>=10000},
-  {id:"xp20000",emoji:"👾", name:"Final Boss de Toi-Même", desc:"20 000 XP accumulés", hint:"Il ne reste plus que toi à battre…", c:x=>x.xp>=20000}
+  {id:"xp20000",emoji:"👾", name:"Final Boss de Toi-Même", desc:"20 000 XP accumulés", hint:"Il ne reste plus que toi à battre…", c:x=>x.xp>=20000},
+  {id:"xp40000",emoji:"🛸", name:"Entité Hors Catégorie", desc:"40 000 XP accumulés", hint:"Les échelles humaines ne suffisent plus…", c:x=>x.xp>=40000},
+  {id:"nav105", emoji:"📈", name:"Petit Porteur Comblé", desc:"NAV du Body Fund à 105", hint:"Le fonds sort du rouge…", c:x=>x.nav>=105},
+  {id:"nav115", emoji:"🌟", name:"Gérant 5 Étoiles Morningstar", desc:"NAV du Body Fund à 115", hint:"Les analystes s'emballent…", c:x=>x.nav>=115},
+  {id:"nav130", emoji:"🎩", name:"Warren Buffett du Biceps", desc:"NAV du Body Fund à 130", hint:"L'oracle d'Omaha, version vestiaire…", c:x=>x.nav>=130},
+  {id:"perfect1", emoji:"🧼", name:"Semaine Sans Bavure", desc:"Une semaine parfaite (7/7 jours actifs ou repos)", hint:"Pas une seule miette laissée…", c:x=>x.perfectWeeks>=1},
+  {id:"perfect4", emoji:"🕊️", name:"Mois Immaculé", desc:"4 semaines parfaites cumulées", hint:"La pureté sur la durée…", c:x=>x.perfectWeeks>=4},
+  {id:"perfect10", emoji:"⛪", name:"Canonisé de Son Vivant", desc:"10 semaines parfaites cumulées", hint:"Le Vatican étudie ton dossier…", c:x=>x.perfectWeeks>=10},
+  {id:"jspent1", emoji:"🔓", name:"Carte Sortie de Prison", desc:"Premier joker consommé — streak sauvée", hint:"Un jour raté, zéro conséquence…", c:x=>x.st.jokerSpent>=1},
+  {id:"jspent5", emoji:"🎲", name:"Flambeur de Jokers", desc:"5 jokers consommés au total", hint:"Tu vis dangereusement, mais assuré…", c:x=>x.st.jokerSpent>=5},
+  {id:"rest10", emoji:"😴", name:"Professionnel de la Sieste Stratégique", desc:"10 jours de repos assumés", hint:"Se reposer est un acte de gestion…", c:x=>x.st.restDays>=10},
+  {id:"rest30", emoji:"🛋", name:"Ambassadeur du Canapé (Réformé)", desc:"30 jours de repos assumés", hint:"L'ancien toi serait fier, le nouveau aussi…", c:x=>x.st.restDays>=30},
+  {id:"gradeA1", emoji:"🎓", name:"Premier de la Classe", desc:"Une semaine notée A au débrief", hint:"Le tableau d'honneur t'attend…", c:x=>x.gradeA>=1},
+  {id:"gradeA5", emoji:"📜", name:"Collectionneur de Mentions", desc:"5 semaines notées A", hint:"Les félicitations du jury deviennent une habitude…", c:x=>x.gradeA>=5},
+  {id:"gradeA15", emoji:"🏫", name:"Major de Promo Perpétuel", desc:"15 semaines notées A", hint:"L'école de la fonte n'a plus rien à t'apprendre…", c:x=>x.gradeA>=15},
+  {id:"erg1", emoji:"👑", name:"Croqueur de Plateforme", desc:"Un record Ergatta battu", hint:"La plateforme s'incline…", c:x=>x.ergBeaten>=1},
+  {id:"erg3", emoji:"⚰️", name:"Fossoyeur d'Ergatta", desc:"3 records Ergatta battus", hint:"Les serveurs de la plateforme paniquent…", c:x=>x.ergBeaten>=3},
+  {id:"erg5", emoji:"🚔", name:"Ennemi Public n°1 d'Ergatta", desc:"5 records Ergatta battus", hint:"Avis de recherche affiché au siège…", c:x=>x.ergBeaten>=5},
+  {id:"geo1", emoji:"📐", name:"Géomètre du Chrono", desc:"Une distance personnalisée créée", hint:"Les distances officielles ne te suffisaient pas…", c:x=>x.customDist>=1},
+  {id:"race20", emoji:"🐙", name:"Vingt Mille Lieues Chronométrées", desc:"Un record posé sur 20 distances", hint:"Jules Verne t'aurait embarqué…", c:x=>x.races>=20},
+  {id:"plkh1", emoji:"🕐", name:"Une Heure de Statue", desc:"1 heure de planche cumulée", hint:"60 minutes d'immobilité héroïque…", c:x=>x.st.plankSec>=3600},
+  {id:"plkh5", emoji:"⛪️", name:"Gargouille de Notre-Dame", desc:"5 heures de planche cumulées", hint:"Un poste t'attend sur la façade…", c:x=>x.st.plankSec>=18000},
+  {id:"rowh10", emoji:"⏲", name:"Dix Heures de Galère (Volontaire)", desc:"10 heures de rameur cumulées", hint:"Et tu en redemandes…", c:x=>x.st.rowMin>=600},
+  {id:"rowh50", emoji:"⛓️", name:"Galérien en Chef", desc:"50 heures de rameur cumulées", hint:"Les romains t'auraient affranchi…", c:x=>x.st.rowMin>=3000},
+  {id:"rowh100", emoji:"⚓", name:"Capitaine Cent Heures", desc:"100 heures de rameur cumulées", hint:"La mer intérieure n'a plus de secret…", c:x=>x.st.rowMin>=6000},
+  {id:"dayvol1t", emoji:"🏗", name:"Tonne du Jour", desc:"1 000 kg soulevés en une seule journée", hint:"Une tonne avant le déjeuner…", c:x=>x.st.maxDayVol>=1000},
+  {id:"dayvol2t", emoji:"🐘", name:"Deux Tonnes, Sinon Rien", desc:"2 000 kg soulevés en une journée", hint:"Le poids d'un éléphanteau bien nourri…", c:x=>x.st.maxDayVol>=2000},
+  {id:"abs60day", emoji:"🌀", name:"Essoreuse à Abdos", desc:"60 abdos dans la même journée", hint:"Programme essorage intensif…", c:x=>x.st.maxAbsDay>=60},
+  {id:"push40day", emoji:"🔫", name:"Mitraillette à Pompes", desc:"40 pompes dans la même journée", hint:"Rafale contrôlée…", c:x=>x.st.maxPushDay>=40},
+  {id:"tennis50", emoji:"🏟", name:"Sociétaire du Court Central", desc:"50 séances de tennis validées", hint:"Roland-Garros connaît ton visage…", c:x=>x.st.tennis>=50},
+  {id:"dawn100", emoji:"🥐", name:"Ministre de l'Aube", desc:"100 exercices validés avant 8h", hint:"Décret officiel : le matin t'appartient…", c:x=>x.st.before8>=100},
+  {id:"night25", emoji:"🧛", name:"Vampire Certifié Conforme", desc:"25 exercices validés après 22h", hint:"L'ail ne te fait rien, la flemme non plus…", c:x=>x.st.after22>=25},
+  {id:"streak180", emoji:"🧲", name:"Semestre Aimanté", desc:"180 jours de streak", hint:"Impossible de te décoller du programme…", c:x=>x.streak>=180},
+  {id:"streak365", emoji:"🎆", name:"Année Invaincue", desc:"365 jours de streak", hint:"Un tour complet du soleil sans lâcher…", c:x=>x.streak>=365}
 ];
 const BOSSES = [
   {id:"kraken",   emoji:"🐙", name:"Le Kraken",    desc:"km de rameur dans le mois",          base:30,  metric:"rowKm"},
@@ -971,18 +1024,30 @@ function applyFeedback(exId, fb, block, dateIso){
   }
   else if(ex.ut==="sec"){
     const v=Number(block.sec)||0;
-    if(fb==="dur") st.sec=Math.max(20,(st.sec||45)-10);
-    else if(v>=(st.sec||45)) st.sec=Math.min(180, Math.max(st.sec||45,v)+10);
-    if((st.sec||0)>=180) toast("🗿 Coach : 3 min atteintes — variantes prescrites (latérale, lestée, bras tendus)");
-    else toast("⏱ Coach : prochaine cible "+st.sec+" sec");
+    const tgt=st.sec||45;
+    if(fb==="dur"){ st.sec=Math.max(20,tgt-10); st.hits=0; toast("🧠 Coach : on redescend à "+st.sec+" sec — mieux vaut solide que cramé"); }
+    else if(v>=tgt){
+      st.hits=(st.hits||0)+(fb==="facile"?2:1);
+      if(st.hits>=2){ st.sec=Math.min(180,tgt+5); st.hits=0;
+        if(st.sec>=180) toast("🗿 Coach : 3 min atteintes — variantes prescrites (latérale, lestée, bras tendus)");
+        else toast("📈 Coach : cible validée deux fois → "+st.sec+" sec. Progression durable, pas de feu de paille"); }
+      else toast("✅ Coach : bien tenu ! Confirme "+tgt+" sec encore une fois et on montera de 5");
+    }
+    else { st.hits=0; toast("🎯 Coach : cible maintenue à "+tgt+" sec — elle tombera la prochaine fois"); }
   }
   else if(ex.ut==="nb"){
     const v=Number(block.nb)||0;
     const cap=exId==="pompes"?60:75;
-    if(fb==="dur") st.nb=Math.max(10,(st.nb||30)-4);
-    else if(v>=(st.nb||30)) st.nb=Math.min(cap, Math.max(st.nb||30,v)+2);
-    if((st.nb||0)>=cap) toast("💪 Coach : plafond atteint — passe à la version lestée");
-    else toast("🎯 Coach : prochaine cible "+st.nb+" reps");
+    const tgt=st.nb||(exId==="pompes"?20:30);
+    if(fb==="dur"){ st.nb=Math.max(10,tgt-4); st.hits=0; toast("🧠 Coach : on redescend à "+st.nb+" reps — la qualité d\u2019abord"); }
+    else if(v>=tgt){
+      st.hits=(st.hits||0)+(fb==="facile"?2:1);
+      if(st.hits>=2){ st.nb=Math.min(cap,tgt+2); st.hits=0;
+        if(st.nb>=cap) toast("💪 Coach : plafond atteint — passe à la version lestée");
+        else toast("📈 Coach : cible validée deux fois → "+st.nb+" reps. On construit pour durer"); }
+      else toast("✅ Coach : cible atteinte ! Confirme "+tgt+" reps encore une fois et on ajoutera 2");
+    }
+    else { st.hits=0; toast("🎯 Coach : cible maintenue à "+tgt+" reps"); }
   }
   save();
 }
@@ -1374,26 +1439,30 @@ function checkStreakMilestones(){
 }
 /* ---------- Trophées & Boss ---------- */
 function trophyStats(){
-  let rowM=0,row40=0,abs=0,vol=0,doneCount=0,pushups=0,before8=0,after22=0,tennis=0,weekend=0;
+  let rowM=0,row40=0,abs=0,vol=0,doneCount=0,pushups=0,before8=0,after22=0,tennis=0,weekend=0,plankSec=0,rowMin=0,maxAbsDay=0,maxPushDay=0,maxDayVol=0,restDays=0,jokerSpent=0;
   const doneByDay={};
   Object.keys(S.days).forEach(d=>{
-    let dCount=0;
+    let dCount=0, dAbs=0, dPush=0, dVol=0;
     const dow=fromIso(d).getDay();
+    if(S.days[d].rest) restDays++;
+    if(S.days[d].jokerUsed) jokerSpent++;
     (S.days[d].blocks||[]).forEach(b=>{
       if(b.status!=="fait"&&b.status!=="partiel") return;
       doneCount++; dCount++;
       const ex=exById(b.exId); if(!ex) return;
-      if(b.exId.startsWith("rameur")){ rowM+=Number(b.dist)||0; if((Number(b.min)||0)>=40) row40++; }
-      if(b.exId==="abdos-classiques"||b.exId==="abdos-lateraux") abs+=Number(b.nb)||0;
-      if(b.exId==="pompes") pushups+=Number(b.nb)||0;
+      if(b.exId.startsWith("rameur")){ rowM+=Number(b.dist)||0; rowMin+=Number(b.min)||0; if((Number(b.min)||0)>=40) row40++; }
+      if(b.exId==="abdos-classiques"||b.exId==="abdos-lateraux"){ abs+=Number(b.nb)||0; dAbs+=Number(b.nb)||0; }
+      if(b.exId==="pompes"){ pushups+=Number(b.nb)||0; dPush+=Number(b.nb)||0; }
+      if(b.exId==="planche") plankSec+=Number(b.sec)||0;
       if(b.exId==="tennis") tennis++;
-      if(ex.ut==="sets") vol+=(b.sets||[]).reduce((a,s)=>a+(Number(s.kg)||0)*(Number(s.reps)||0),0);
+      if(ex.ut==="sets"){ const bv=(b.sets||[]).reduce((a,s)=>a+(Number(s.kg)||0)*(Number(s.reps)||0),0); vol+=bv; dVol+=bv; }
       if(b.doneAt){ const hh=Number(b.doneAt.slice(0,2)); if(hh<8) before8++; if(hh>=22) after22++; }
     });
     if(dCount>0&&(dow===0||dow===6)) weekend++;
+    maxAbsDay=Math.max(maxAbsDay,dAbs); maxPushDay=Math.max(maxPushDay,dPush); maxDayVol=Math.max(maxDayVol,dVol);
     doneByDay[d]=dCount;
   });
-  return {rowM,row40,abs,vol,doneCount,pushups,before8,after22,tennis,weekend,doneByDay};
+  return {rowM,row40,abs,vol,doneCount,pushups,before8,after22,tennis,weekend,plankSec,rowMin,maxAbsDay,maxPushDay,maxDayVol,restDays,jokerSpent,doneByDay};
 }
 function checkTrophies(){
   const st=trophyStats();
@@ -1434,6 +1503,22 @@ function checkTrophies(){
     if(n>=4) okWeeks++;
   }
   x.okWeeks=okWeeks;
+  x.ergBeaten=0;
+  Object.keys(S.raceRecords).forEach(d=>{ const e=S.ergattaRecords[d]; if(e&&S.raceRecords[d].sec<e.sec) x.ergBeaten++; });
+  x.customDist=(S.customRaceDistances||[]).length;
+  x.perfectWeeks=0; x.gradeA=0;
+  {
+    const cur=weekId(todayIso());
+    for(let k=1;k<=60;k++){
+      const mon=addDays(cur,-7*k);
+      if(mon<(S.firstUse||mon)) break;
+      if(isPerfectWeek(mon)) x.perfectWeeks++;
+      const ws=weekStats(mon);
+      if(ws.active>0&&weekGrade(ws)==="A") x.gradeA++;
+    }
+  }
+  x.nav=0;
+  { const fsr=fundSeries(); if(fsr&&fsr.length) x.nav=fsr[fsr.length-1].nav; }
   x.deloadDone=false;
   if(S.cycleStart){
     let mon=S.cycleStart;
@@ -2017,10 +2102,8 @@ function renderToday(){
   } else {
     html+='<div class="emptymsg">😌 Repos assumé. Les muscles se construisent aussi sur le canapé.<br>(enfin, surtout après l\u2019effort)</div>';
   }
-  const litres=(day.water*0.25).toFixed(2).replace(".00","").replace(/0$/,"");
-  html+='<h2>💧 Hydratation</h2><div class="card tight"><div class="row between"><b>'+litres+' L / 3 L</b>'
-    +'<div class="row"><button class="btn mini" onclick="water(-1)">−</button><button class="btn mini blue" onclick="water(1)">+ verre 25cl</button></div></div>'
-    +'<div class="waterbar"><div style="width:'+Math.min(100,day.water/12*100)+'%"></div></div></div>';
+  const hydOn=day.water>=12;
+  html+='<h2>💧 Hydratation</h2><div class="card tight"><div class="chk '+(hydOn?"on":"")+'" onclick="toggleWater()"><span class="box">'+(hydOn?"✓":"")+'</span>J\u2019ai bu mes 3 litres aujourd\u2019hui</div></div>';
   html+='<h2>💊 Compléments</h2><div class="card tight"><div class="suppgrid">';
   SUPPLEMENTS.forEach(s=>{
     const on=day.supp&&day.supp[s.id];
@@ -2122,8 +2205,8 @@ function blockInputs(b,i,ex){
 }
 /* actions jour */
 function toggleRest(){const d=getDay(CUR_DATE,true);d.rest=!d.rest;save();render();}
-function water(n){const d=getDay(CUR_DATE,true);const was=d.water;d.water=Math.max(0,(d.water||0)+n);save();
-  if(was<12&&d.water>=12){addXP(XP.water);showCongrats("3 litres ! +"+XP.water+" XP. "+pickCongrats(),false);checkTrophies();}render();}
+function toggleWater(){const d=getDay(CUR_DATE,true);const was=(d.water||0)>=12;d.water=was?0:12;save();
+  if(!was){addXP(XP.water);showCongrats("💧 3 litres ! +"+XP.water+" XP. "+pickCongrats(),false);checkTrophies();}render();}
 function toggleSupp(id){const d=getDay(CUR_DATE,true);d.supp=d.supp||{};d.supp[id]=!d.supp[id];save();
   if(SUPPLEMENTS.every(s=>d.supp[s.id])){addXP(XP.supp);toast("💊 Compléments complets ! +"+XP.supp+" XP");checkTrophies();}render();}
 function allSupp(){const d=getDay(CUR_DATE,true);const wasAll=d.supp&&SUPPLEMENTS.every(s=>d.supp[s.id]);d.supp={};SUPPLEMENTS.forEach(s=>d.supp[s.id]=true);save();
