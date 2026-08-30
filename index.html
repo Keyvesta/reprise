@@ -259,129 +259,209 @@ const HEALTH_FIELDS = [
   {id:"ageMet", name:"Âge Métabolique", unit:"ans", step:1}
 ];
 const RANKS = [
-  {xp:0, name:"Larve de Canapé", emoji:"🛋️"},
-  {xp:122, name:"Limace Sous Plaid", emoji:"🐌"},
-  {xp:247, name:"Spécialiste du Bouton Snooze", emoji:"⏰"},
-  {xp:376, name:"Athlète de Télécommande", emoji:"📺"},
-  {xp:508, name:"Pantoufle Ambitieuse", emoji:"🥿"},
-  {xp:644, name:"Croissant de Compétition", emoji:"🥐"},
-  {xp:784, name:"Randonneur Frigo-Canapé", emoji:"🧊"},
-  {xp:928, name:"Stagiaire de l'Échauffement", emoji:"🥱"},
-  {xp:1076, name:"Porteur d'Eau (le Sien)", emoji:"💧"},
-  {xp:1228, name:"Déplieur de Tapis Officiel", emoji:"🧻"},
-  {xp:1384, name:"Compteur de Reps des Autres", emoji:"🔢"},
-  {xp:1544, name:"Apprenti de la Fonte", emoji:"🔩"},
-  {xp:1709, name:"Gonfleur de Ballons Promu", emoji:"🎈"},
-  {xp:1878, name:"Trotteur de Couloir", emoji:"👟"},
-  {xp:2052, name:"Écuyer de l'Haltère Rose", emoji:"🛎️"},
-  {xp:2230, name:"Matelot d'Eau Douce", emoji:"⛵"},
-  {xp:2413, name:"Recrue de l'Ergatta", emoji:"🚣"},
-  {xp:2600, name:"Bizut de la Planche", emoji:"📏"},
-  {xp:2792, name:"Soldat de la Sueur", emoji:"🥵"},
-  {xp:2988, name:"Caporal des Courbatures", emoji:"🤕"},
-  {xp:3189, name:"Caporal-Chef du Cardio Timide", emoji:"🫀"},
-  {xp:3395, name:"Sergent des Squats Hésitants", emoji:"🦵"},
-  {xp:3605, name:"Sergent-Chef du Gainage", emoji:"🧱"},
-  {xp:3820, name:"Adjudant des Abdos Invisibles", emoji:"🍫"},
-  {xp:4040, name:"Aspirant du Développé Modeste", emoji:"📈"},
-  {xp:4265, name:"Lieutenant du Lest Léger", emoji:"🎖️"},
-  {xp:4495, name:"Capitaine Cardio", emoji:"⛵"},
-  {xp:4730, name:"Commandant du Gainage", emoji:"🛡️"},
-  {xp:4970, name:"Major de la Fonte", emoji:"🏋️"},
-  {xp:5214, name:"Lieutenant-Colonel du Curl", emoji:"💪"},
-  {xp:5463, name:"Colonel des Pectoraux Naissants", emoji:"🦍"},
-  {xp:5717, name:"Général de la Suée", emoji:"⚔️"},
-  {xp:5976, name:"Maréchal du Muscle", emoji:"🏛️"},
-  {xp:6240, name:"Vétéran du Vestiaire", emoji:"🧢"},
-  {xp:6510, name:"Instructeur des Limaces (Ex-Collègues)", emoji:"📣"},
-  {xp:6785, name:"Videur de Boîte (de Nuit de Sommeil)", emoji:"🚪"},
-  {xp:7065, name:"Gladiateur du Garage", emoji:"🏟️"},
-  {xp:7350, name:"Rétiaire du Rameur", emoji:"🔱"},
-  {xp:7640, name:"Centurion du Salon", emoji:"🗡️"},
-  {xp:7935, name:"Légionnaire du Lest", emoji:"🪖"},
-  {xp:8235, name:"Prétorien de la Planche", emoji:"🛡"},
-  {xp:8541, name:"Champion du Colisée Domestique", emoji:"🏺"},
-  {xp:8852, name:"Spartiate d'Appartement", emoji:"⚱️"},
-  {xp:9168, name:"Hoplite des Haltères", emoji:"🏹"},
-  {xp:9489, name:"Léonidas du Living", emoji:"🦁"},
-  {xp:9816, name:"Titan du Tapis de Sol", emoji:"🌋"},
-  {xp:10148, name:"Colosse de Rhodes (Arrondissement)", emoji:"🗿"},
-  {xp:10485, name:"Minotaure du Mètre Carré", emoji:"🐂"},
-  {xp:10828, name:"Écuyer Anobli par la Sueur", emoji:"🐎"},
-  {xp:11176, name:"Chevalier de la Fonte", emoji:"♞"},
-  {xp:11529, name:"Croisé du Cardio", emoji:"✝️"},
-  {xp:11888, name:"Templier du Tirage", emoji:"🏰"},
-  {xp:12252, name:"Banneret du Biceps", emoji:"🚩"},
-  {xp:12621, name:"Baronnet de la Barre", emoji:"📯"},
-  {xp:12996, name:"Baron de la Barre", emoji:"🎩"},
-  {xp:13376, name:"Vicomte du Volume", emoji:"🧐"},
-  {xp:13762, name:"Comte du Cardio", emoji:"🍷"},
-  {xp:14153, name:"Marquis du Mollet Saillant", emoji:"🥾"},
-  {xp:14550, name:"Duc du Développé", emoji:"🐂"},
-  {xp:14952, name:"Grand-Duc du Deltoïde", emoji:"🦌"},
-  {xp:15360, name:"Archiduc des Haltères", emoji:"🦂"},
-  {xp:15773, name:"Prince du Protéiné", emoji:"🥩"},
-  {xp:16192, name:"Dauphin du Deload", emoji:"🐬"},
-  {xp:16616, name:"Vice-Roi du Vestiaire", emoji:"🎗️"},
-  {xp:17046, name:"Roi du Rameur", emoji:"⚜️"},
-  {xp:17482, name:"Roi Soleil du Squat", emoji:"🌞"},
-  {xp:17923, name:"Empereur de l'Effort", emoji:"🏛"},
-  {xp:18370, name:"Imperator des Intervalles", emoji:"🦅"},
-  {xp:18822, name:"Tsar de la Transpiration", emoji:"❄️"},
-  {xp:19280, name:"Sultan de la Série Longue", emoji:"🕌"},
-  {xp:19744, name:"Pharaon de la Forme", emoji:"🐪"},
-  {xp:20213, name:"Négus du Négatif Contrôlé", emoji:"👑"},
-  {xp:20688, name:"Kaiser du Kettlebell Imaginaire", emoji:"🪙"},
-  {xp:21169, name:"Shah du Shrug", emoji:"💎"},
-  {xp:21655, name:"Maharadjah du Mollet", emoji:"🐘"},
-  {xp:22147, name:"Émir de l'Échauffement Parfait", emoji:"🌙"},
-  {xp:22645, name:"Padawan Repenti", emoji:"🌱"},
-  {xp:23149, name:"Disciple du Dojo Domestique", emoji:"🥋"},
-  {xp:23658, name:"Ceinture Noire de Télétravail", emoji:"🖤"},
-  {xp:24173, name:"Sensei de la Sueur", emoji:"🍵"},
-  {xp:24694, name:"Ninja des Nuobell", emoji:"🥷"},
-  {xp:25221, name:"Samouraï du Split", emoji:"🗡"},
-  {xp:25753, name:"Ronin du Rameur", emoji:"🌊"},
-  {xp:26291, name:"Shogun du Shaker", emoji:"🍶"},
-  {xp:26835, name:"Moine Shaolin du Salon", emoji:"🧘"},
-  {xp:27385, name:"Maître Dragon du Gainage", emoji:"🐉"},
-  {xp:27941, name:"Yogi du Yoyo Pondéral (Vaincu)", emoji:"☯️"},
-  {xp:28502, name:"Grand Sage de la Fonte", emoji:"🧙"},
-  {xp:29069, name:"Oracle de l'Ergatta", emoji:"🔮"},
-  {xp:29642, name:"Alchimiste du Cardio", emoji:"⚗️"},
-  {xp:30221, name:"Druide du Deload", emoji:"🌿"},
-  {xp:30806, name:"Archimage des Abdos", emoji:"✨"},
-  {xp:31397, name:"Nécromancien du Négatif", emoji:"🦴"},
-  {xp:31994, name:"Enchanteur de l'Échauffement", emoji:"🪄"},
-  {xp:32597, name:"Paladin de la Planche", emoji:"⚜"},
-  {xp:33206, name:"Berserker du Burpee Évité", emoji:"🪓"},
-  {xp:33820, name:"Chasseur de Records Assermenté", emoji:"🎯"},
-  {xp:34440, name:"Dompteur de Boss Mensuels", emoji:"🦁"},
-  {xp:35066, name:"Gardien du Temple (ton Salon)", emoji:"⛩️"},
-  {xp:35698, name:"Héros aux Mille Séances", emoji:"📜"},
-  {xp:36336, name:"Demi-Titan de l'Aube", emoji:"🌅"},
-  {xp:36980, name:"Fils Caché d'Héraclès", emoji:"🏹"},
-  {xp:37630, name:"Cousin Éloigné d'Achille (Talon Solide)", emoji:"🦶"},
-  {xp:38286, name:"Argonaute de l'Ergatta", emoji:"🛶"},
-  {xp:38948, name:"Prométhée du Protéiné", emoji:"🔥"},
-  {xp:39616, name:"Atlas du Living-Room", emoji:"🌍"},
-  {xp:40290, name:"Poséidon du Rameur", emoji:"🌊"},
-  {xp:40970, name:"Arès de l'Haltère", emoji:"⚔"},
-  {xp:41656, name:"Hermès des Fentes Marchées", emoji:"🪽"},
-  {xp:42348, name:"Apollon du Miroir de l'Entrée", emoji:"🌞"},
-  {xp:43046, name:"Zeus du Zercher", emoji:"⚡"},
-  {xp:43750, name:"Chuck Norris du 6e Arrondissement", emoji:"🤠"},
-  {xp:44460, name:"Immortel de l'Intervalle", emoji:"🧬"},
-  {xp:45177, name:"Machine Biomécanique Homologuée", emoji:"🤖"},
-  {xp:45900, name:"Demi-Dieu du Deload", emoji:"🌩️"},
-  {xp:46629, name:"Anomalie Statistique Ambulante", emoji:"📊"},
-  {xp:47364, name:"Légende Vivante du Vestiaire", emoji:"🏆"},
-  {xp:48105, name:"Patrimoine Mondial de l'UNESCO (Catégorie Physique)", emoji:"🏛️"},
-  {xp:48852, name:"Mythe Absolu du Miroir", emoji:"👑"},
-  {xp:49605, name:"Boss Final de la Remise en Forme", emoji:"👾"}
+  {xp:0, name:"Gérard Depardieu (aujourd'hui)", emoji:"🛋️", t:"Le canapé t'appelle"},
+  {xp:111, name:"Cyril Hanouna (avant sa transformation)", emoji:"🛋️", t:"Le canapé t'appelle"},
+  {xp:223, name:"José Garcia (mode Bronzés 3)", emoji:"🛋️", t:"Le canapé t'appelle"},
+  {xp:336, name:"Coluche (mode \"y'a bon\")", emoji:"🛋️", t:"Le canapé t'appelle"},
+  {xp:451, name:"Michel Galabru (Le Gendarme, dernière saison)", emoji:"🛋️", t:"Le canapé t'appelle"},
+  {xp:567, name:"John Candy", emoji:"🛋️", t:"Le canapé t'appelle"},
+  {xp:685, name:"Chris Farley", emoji:"🛋️", t:"Le canapé t'appelle"},
+  {xp:804, name:"John Belushi", emoji:"🛋️", t:"Le canapé t'appelle"},
+  {xp:925, name:"Jack Black", emoji:"🛋️", t:"Le canapé t'appelle"},
+  {xp:1047, name:"Kevin James", emoji:"🛋️", t:"Le canapé t'appelle"},
+  {xp:1171, name:"Louie Anderson", emoji:"🛋️", t:"Le canapé t'appelle"},
+  {xp:1297, name:"Meat Loaf", emoji:"🛋️", t:"Le canapé t'appelle"},
+  {xp:1424, name:"Luciano Pavarotti", emoji:"🛋️", t:"Le canapé t'appelle"},
+  {xp:1553, name:"Alfred Hitchcock", emoji:"🛋️", t:"Le canapé t'appelle"},
+  {xp:1683, name:"Orson Welles", emoji:"🛋️", t:"Le canapé t'appelle"},
+  {xp:1815, name:"Marlon Brando (fin de carrière)", emoji:"🛋️", t:"Le canapé t'appelle"},
+  {xp:1949, name:"Elvis Presley (période Vegas)", emoji:"🛋️", t:"Le canapé t'appelle"},
+  {xp:2084, name:"James Gandolfini", emoji:"🛋️", t:"Le canapé t'appelle"},
+  {xp:2221, name:"Vince Vaughn", emoji:"🛋️", t:"Le canapé t'appelle"},
+  {xp:2360, name:"Jack Nicholson (aujourd'hui)", emoji:"🛋️", t:"Le canapé t'appelle"},
+  {xp:2501, name:"Diego Maradona (retraité)", emoji:"🚶", t:"Première sortie du dimanche"},
+  {xp:2643, name:"Adriano (en fin de carrière)", emoji:"🚶", t:"Première sortie du dimanche"},
+  {xp:2787, name:"Serge Blanco (maintenant, mode thalasso)", emoji:"🚶", t:"Première sortie du dimanche"},
+  {xp:2933, name:"Ronaldinho (retraité, mode fiesta)", emoji:"🚶", t:"Première sortie du dimanche"},
+  {xp:3080, name:"John Daly", emoji:"🚶", t:"Première sortie du dimanche"},
+  {xp:3229, name:"David \"Big Papi\" Ortiz (retraité)", emoji:"🚶", t:"Première sortie du dimanche"},
+  {xp:3380, name:"Bartolo Colón", emoji:"🚶", t:"Première sortie du dimanche"},
+  {xp:3533, name:"Pablo Sandoval \"Kung Fu Panda\"", emoji:"🚶", t:"Première sortie du dimanche"},
+  {xp:3687, name:"Wayne Rooney (fin de carrière en MLS)", emoji:"🚶", t:"Première sortie du dimanche"},
+  {xp:3843, name:"Paul Gascoigne (aujourd'hui)", emoji:"🚶", t:"Première sortie du dimanche"},
+  {xp:4001, name:"Neymar (2024, sorti de l'infirmerie)", emoji:"🚶", t:"Première sortie du dimanche"},
+  {xp:4161, name:"Karim Benzema (aujourd'hui, Al-Ittihad)", emoji:"🚶", t:"Première sortie du dimanche"},
+  {xp:4323, name:"Christophe Dugarry (consultant RMC)", emoji:"🚶", t:"Première sortie du dimanche"},
+  {xp:4486, name:"Jean-Pierre Papin (aujourd'hui)", emoji:"🚶", t:"Première sortie du dimanche"},
+  {xp:4651, name:"Bernard Laporte (président plus qu'athlète)", emoji:"🚶", t:"Première sortie du dimanche"},
+  {xp:4818, name:"Franck Ribéry (fin de carrière)", emoji:"🚶", t:"Première sortie du dimanche"},
+  {xp:4987, name:"Emmanuel Petit (consultant)", emoji:"🚶", t:"Première sortie du dimanche"},
+  {xp:5158, name:"Fabien Barthez (aujourd'hui)", emoji:"🚶", t:"Première sortie du dimanche"},
+  {xp:5330, name:"Florent Pagny (reconverti éleveur bovin)", emoji:"🚶", t:"Première sortie du dimanche"},
+  {xp:5504, name:"Renaud (mode rockeur increvable)", emoji:"🚶", t:"Première sortie du dimanche"},
+  {xp:5680, name:"Elton John", emoji:"😅", t:"On commence à transpirer"},
+  {xp:5858, name:"Freddie Mercury (tournée)", emoji:"😅", t:"On commence à transpirer"},
+  {xp:6038, name:"Liam Gallagher", emoji:"😅", t:"On commence à transpirer"},
+  {xp:6220, name:"Noel Gallagher", emoji:"😅", t:"On commence à transpirer"},
+  {xp:6403, name:"Snoop Dogg", emoji:"😅", t:"On commence à transpirer"},
+  {xp:6588, name:"Jay-Z", emoji:"😅", t:"On commence à transpirer"},
+  {xp:6775, name:"Kanye West", emoji:"😅", t:"On commence à transpirer"},
+  {xp:6964, name:"Patrick Bruel (aujourd'hui)", emoji:"😅", t:"On commence à transpirer"},
+  {xp:7155, name:"Vianney (le costaud sympathique)", emoji:"😅", t:"On commence à transpirer"},
+  {xp:7348, name:"Grand Corps Malade", emoji:"😅", t:"On commence à transpirer"},
+  {xp:7543, name:"Franck Dubosc (mode Camping)", emoji:"😅", t:"On commence à transpirer"},
+  {xp:7739, name:"Kad Merad", emoji:"😅", t:"On commence à transpirer"},
+  {xp:7937, name:"Dany Boon (mode Ch'tis)", emoji:"😅", t:"On commence à transpirer"},
+  {xp:8137, name:"Jamel Debbouze (dynamique malgré tout)", emoji:"😅", t:"On commence à transpirer"},
+  {xp:8339, name:"Leonardo DiCaprio (aujourd'hui)", emoji:"😅", t:"On commence à transpirer"},
+  {xp:8543, name:"Jonah Hill (après transformation partielle)", emoji:"😅", t:"On commence à transpirer"},
+  {xp:8749, name:"Seth Rogen (aujourd'hui, plus svelte)", emoji:"😅", t:"On commence à transpirer"},
+  {xp:8957, name:"Vin Diesel (hors tournage)", emoji:"😅", t:"On commence à transpirer"},
+  {xp:9167, name:"Kevin Hart (régulier)", emoji:"😅", t:"On commence à transpirer"},
+  {xp:9379, name:"Chris Pratt (avant Guardians of the Galaxy)", emoji:"😅", t:"On commence à transpirer"},
+  {xp:9592, name:"Evgueni Kafelnikov (aujourd'hui)", emoji:"🚴", t:"Rythme de croisière"},
+  {xp:9807, name:"Boris Becker (aujourd'hui)", emoji:"🚴", t:"Rythme de croisière"},
+  {xp:10024, name:"John McEnroe (aujourd'hui)", emoji:"🚴", t:"Rythme de croisière"},
+  {xp:10243, name:"Henri Leconte (mode exhibition, toujours fêtard)", emoji:"🚴", t:"Rythme de croisière"},
+  {xp:10464, name:"Goran Ivanišević (aujourd'hui)", emoji:"🚴", t:"Rythme de croisière"},
+  {xp:10687, name:"Marat Safin (retraité)", emoji:"🚴", t:"Rythme de croisière"},
+  {xp:10912, name:"Guy Forget (capitaine de Coupe Davis)", emoji:"🚴", t:"Rythme de croisière"},
+  {xp:11139, name:"Fabrice Santoro (consultant)", emoji:"🚴", t:"Rythme de croisière"},
+  {xp:11368, name:"Yannick Noah (aujourd'hui, toujours zen)", emoji:"🚴", t:"Rythme de croisière"},
+  {xp:11599, name:"Richard Virenque (aujourd'hui)", emoji:"🚴", t:"Rythme de croisière"},
+  {xp:11832, name:"Bernard Hinault (aujourd'hui, le blaireau posé)", emoji:"🚴", t:"Rythme de croisière"},
+  {xp:12067, name:"Laurent Jalabert (consultant vélo)", emoji:"🚴", t:"Rythme de croisière"},
+  {xp:12303, name:"Éric Cantona (mode artiste rebelle)", emoji:"🚴", t:"Rythme de croisière"},
+  {xp:12541, name:"Vincent Cassel (garde la caisse, mode boxe)", emoji:"🚴", t:"Rythme de croisière"},
+  {xp:12781, name:"William Gallas (aujourd'hui)", emoji:"🚴", t:"Rythme de croisière"},
+  {xp:13023, name:"David Trezeguet (aujourd'hui)", emoji:"🚴", t:"Rythme de croisière"},
+  {xp:13267, name:"Sylvain Wiltord (aujourd'hui)", emoji:"🚴", t:"Rythme de croisière"},
+  {xp:13513, name:"Robert Pirès (consultant)", emoji:"🚴", t:"Rythme de croisière"},
+  {xp:13761, name:"Djibril Cissé (aujourd'hui, toujours flashy)", emoji:"🚴", t:"Rythme de croisière"},
+  {xp:14011, name:"Nicolas Anelka (aujourd'hui)", emoji:"🚴", t:"Rythme de croisière"},
+  {xp:14263, name:"Youri Djorkaeff (aujourd'hui)", emoji:"🪞", t:"Ça se voit dans le miroir"},
+  {xp:14517, name:"Bixente Lizarazu (aujourd'hui, toujours sec)", emoji:"🪞", t:"Ça se voit dans le miroir"},
+  {xp:14773, name:"Jean Reno (mode Léon)", emoji:"🪞", t:"Ça se voit dans le miroir"},
+  {xp:15031, name:"Christian Clavier (mode Astérix)", emoji:"🪞", t:"Ça se voit dans le miroir"},
+  {xp:15291, name:"Gad Elmaleh (aujourd'hui)", emoji:"🪞", t:"Ça se voit dans le miroir"},
+  {xp:15553, name:"Omar Sy (aujourd'hui, toujours affûté)", emoji:"🪞", t:"Ça se voit dans le miroir"},
+  {xp:15817, name:"Kev Adams (aujourd'hui)", emoji:"🪞", t:"Ça se voit dans le miroir"},
+  {xp:16083, name:"Michaël Youn (aujourd'hui)", emoji:"🪞", t:"Ça se voit dans le miroir"},
+  {xp:16351, name:"Cyril Hanouna (après sa transformation)", emoji:"🪞", t:"Ça se voit dans le miroir"},
+  {xp:16621, name:"Tony Parker (aujourd'hui, président ASVEL)", emoji:"🪞", t:"Ça se voit dans le miroir"},
+  {xp:16893, name:"Nicolas Batum (aujourd'hui)", emoji:"🪞", t:"Ça se voit dans le miroir"},
+  {xp:17167, name:"Gaël Monfils (aujourd'hui)", emoji:"🪞", t:"Ça se voit dans le miroir"},
+  {xp:17443, name:"Richard Gasquet (aujourd'hui)", emoji:"🪞", t:"Ça se voit dans le miroir"},
+  {xp:17721, name:"Jo-Wilfried Tsonga (retraité récent)", emoji:"🪞", t:"Ça se voit dans le miroir"},
+  {xp:18001, name:"Stan Wawrinka (aujourd'hui)", emoji:"🪞", t:"Ça se voit dans le miroir"},
+  {xp:18283, name:"Andy Murray (retraité récent)", emoji:"🪞", t:"Ça se voit dans le miroir"},
+  {xp:18567, name:"Nick Kyrgios (retour de blessure)", emoji:"🪞", t:"Ça se voit dans le miroir"},
+  {xp:18853, name:"Dominic Thiem (retour de blessure)", emoji:"🪞", t:"Ça se voit dans le miroir"},
+  {xp:19141, name:"Thomas Voeckler (reconverti consultant, toujours speed)", emoji:"🪞", t:"Ça se voit dans le miroir"},
+  {xp:19431, name:"Frédéric Michalak (aujourd'hui)", emoji:"🪞", t:"Ça se voit dans le miroir"},
+  {xp:19723, name:"Antoine Griezmann (aujourd'hui)", emoji:"💪", t:"Le corps répond présent"},
+  {xp:20017, name:"Olivier Giroud (aujourd'hui)", emoji:"💪", t:"Le corps répond présent"},
+  {xp:20313, name:"Hugo Lloris (aujourd'hui)", emoji:"💪", t:"Le corps répond présent"},
+  {xp:20611, name:"Raphaël Varane (aujourd'hui)", emoji:"💪", t:"Le corps répond présent"},
+  {xp:20911, name:"N'Golo Kanté (aujourd'hui)", emoji:"💪", t:"Le corps répond présent"},
+  {xp:21213, name:"Marcus Rashford (aujourd'hui)", emoji:"💪", t:"Le corps répond présent"},
+  {xp:21517, name:"Harry Kane (aujourd'hui)", emoji:"💪", t:"Le corps répond présent"},
+  {xp:21823, name:"Robert Lewandowski (aujourd'hui)", emoji:"💪", t:"Le corps répond présent"},
+  {xp:22131, name:"Luka Modrić (38 ans et toujours au top)", emoji:"💪", t:"Le corps répond présent"},
+  {xp:22441, name:"Toni Kroos (retraité récent)", emoji:"💪", t:"Le corps répond présent"},
+  {xp:22753, name:"Xabi Alonso (mode coach affûté)", emoji:"💪", t:"Le corps répond présent"},
+  {xp:23067, name:"Andrea Pirlo (mode coach élégant)", emoji:"💪", t:"Le corps répond présent"},
+  {xp:23383, name:"Andrés Iniesta (fin de carrière au Japon)", emoji:"💪", t:"Le corps répond présent"},
+  {xp:23701, name:"Zinédine Zidane (mode coach, toujours classe)", emoji:"💪", t:"Le corps répond présent"},
+  {xp:24021, name:"Thierry Dusautoir (aujourd'hui)", emoji:"💪", t:"Le corps répond présent"},
+  {xp:24343, name:"Imanol Harinordoquy (aujourd'hui)", emoji:"💪", t:"Le corps répond présent"},
+  {xp:24667, name:"Dimitri Yachvili (aujourd'hui)", emoji:"💪", t:"Le corps répond présent"},
+  {xp:24993, name:"Raphaël Ibañez (aujourd'hui, sélectionneur)", emoji:"💪", t:"Le corps répond présent"},
+  {xp:25321, name:"Fabien Pelous (aujourd'hui)", emoji:"💪", t:"Le corps répond présent"},
+  {xp:25651, name:"Aurélien Rougerie (aujourd'hui)", emoji:"💪", t:"Le corps répond présent"},
+  {xp:25983, name:"Kylian Mbappé (aujourd'hui)", emoji:"🏅", t:"Athlète confirmé"},
+  {xp:26317, name:"Erling Haaland (aujourd'hui)", emoji:"🏅", t:"Athlète confirmé"},
+  {xp:26653, name:"Vinícius Júnior (aujourd'hui)", emoji:"🏅", t:"Athlète confirmé"},
+  {xp:26991, name:"Jude Bellingham (aujourd'hui)", emoji:"🏅", t:"Athlète confirmé"},
+  {xp:27331, name:"Rafael Nadal (aujourd'hui)", emoji:"🏅", t:"Athlète confirmé"},
+  {xp:27673, name:"Novak Djokovic (aujourd'hui)", emoji:"🏅", t:"Athlète confirmé"},
+  {xp:28018, name:"Carlos Alcaraz (aujourd'hui)", emoji:"🏅", t:"Athlète confirmé"},
+  {xp:28365, name:"Jannik Sinner (aujourd'hui)", emoji:"🏅", t:"Athlète confirmé"},
+  {xp:28714, name:"Daniil Medvedev (aujourd'hui)", emoji:"🏅", t:"Athlète confirmé"},
+  {xp:29065, name:"LeBron James (40 ans et toujours élite)", emoji:"🏅", t:"Athlète confirmé"},
+  {xp:29418, name:"Stephen Curry (aujourd'hui)", emoji:"🏅", t:"Athlète confirmé"},
+  {xp:29773, name:"Kevin Durant (aujourd'hui)", emoji:"🏅", t:"Athlète confirmé"},
+  {xp:30130, name:"Giannis Antetokounmpo (aujourd'hui)", emoji:"🏅", t:"Athlète confirmé"},
+  {xp:30489, name:"Victor Wembanyama (aujourd'hui)", emoji:"🏅", t:"Athlète confirmé"},
+  {xp:30850, name:"Shohei Ohtani (aujourd'hui)", emoji:"🏅", t:"Athlète confirmé"},
+  {xp:31213, name:"Patrick Mahomes (aujourd'hui)", emoji:"🏅", t:"Athlète confirmé"},
+  {xp:31578, name:"Alain Bernard (pic olympique, natation)", emoji:"🏅", t:"Athlète confirmé"},
+  {xp:31945, name:"Camille Lacourt (aujourd'hui, toujours taillé)", emoji:"🏅", t:"Athlète confirmé"},
+  {xp:32314, name:"Renaud Lavillenie (aujourd'hui)", emoji:"🏅", t:"Athlète confirmé"},
+  {xp:32685, name:"Kevin Mayer (aujourd'hui, décathlonien complet)", emoji:"🏅", t:"Athlète confirmé"},
+  {xp:33058, name:"Usain Bolt (pic Pékin 2008)", emoji:"⚔️", t:"Machine de guerre"},
+  {xp:33433, name:"Tyson Fury (en pleine préparation)", emoji:"⚔️", t:"Machine de guerre"},
+  {xp:33811, name:"Anthony Joshua (au sommet)", emoji:"⚔️", t:"Machine de guerre"},
+  {xp:34191, name:"Canelo Álvarez (aujourd'hui)", emoji:"⚔️", t:"Machine de guerre"},
+  {xp:34573, name:"Conor McGregor (pic 2016)", emoji:"⚔️", t:"Machine de guerre"},
+  {xp:34957, name:"Khabib Nurmagomedov (invaincu, pic de forme)", emoji:"⚔️", t:"Machine de guerre"},
+  {xp:35343, name:"Jon Jones (pic de forme)", emoji:"⚔️", t:"Machine de guerre"},
+  {xp:35731, name:"Francis Ngannou (aujourd'hui)", emoji:"⚔️", t:"Machine de guerre"},
+  {xp:36121, name:"Mike Tyson (pic 1988)", emoji:"⚔️", t:"Machine de guerre"},
+  {xp:36513, name:"Floyd Mayweather (invaincu)", emoji:"⚔️", t:"Machine de guerre"},
+  {xp:36907, name:"Brahim Asloum (pic olympique, boxe)", emoji:"⚔️", t:"Machine de guerre"},
+  {xp:37303, name:"Jean-Claude Van Damme (pic Bloodsport, 1988)", emoji:"⚔️", t:"Machine de guerre"},
+  {xp:37701, name:"Vitali Klitschko (pic de règne)", emoji:"⚔️", t:"Machine de guerre"},
+  {xp:38101, name:"Wladimir Klitschko (pic de règne)", emoji:"⚔️", t:"Machine de guerre"},
+  {xp:38504, name:"Georges St-Pierre (pic UFC)", emoji:"⚔️", t:"Machine de guerre"},
+  {xp:38909, name:"Anderson Silva (pic invaincu)", emoji:"⚔️", t:"Machine de guerre"},
+  {xp:39316, name:"Fedor Emelianenko (pic Pride FC)", emoji:"⚔️", t:"Machine de guerre"},
+  {xp:39725, name:"Serge Betsen (pic international, rugby)", emoji:"⚔️", t:"Machine de guerre"},
+  {xp:40136, name:"Thierry Henry (pic 2003-2006, Arsenal)", emoji:"⚔️", t:"Machine de guerre"},
+  {xp:40549, name:"Cristiano Ronaldo (aujourd'hui, 41 ans et taillé comme à 25)", emoji:"⚔️", t:"Machine de guerre"},
+  {xp:40964, name:"Cristiano Ronaldo (pic 2016, Ballon d'Or)", emoji:"🌍", t:"Élite mondiale"},
+  {xp:41381, name:"Zlatan Ibrahimović (pic PSG)", emoji:"🌍", t:"Élite mondiale"},
+  {xp:41800, name:"Michael Phelps (pic Pékin 2008)", emoji:"🌍", t:"Élite mondiale"},
+  {xp:42221, name:"Pelé (pic 1970)", emoji:"🌍", t:"Élite mondiale"},
+  {xp:42645, name:"Diego Maradona (pic Mexico 1986)", emoji:"🌍", t:"Élite mondiale"},
+  {xp:43071, name:"Zinédine Zidane (pic 1998-2006)", emoji:"🌍", t:"Élite mondiale"},
+  {xp:43499, name:"Ronaldo Nazário (pic 1997, \"le Phénomène\")", emoji:"🌍", t:"Élite mondiale"},
+  {xp:43929, name:"George Weah (pic Ballon d'Or 1995)", emoji:"🌍", t:"Élite mondiale"},
+  {xp:44361, name:"Michael Jordan (pic 1996, Bulls)", emoji:"🌍", t:"Élite mondiale"},
+  {xp:44795, name:"Kobe Bryant (pic 2008-2010)", emoji:"🌍", t:"Élite mondiale"},
+  {xp:45231, name:"Tom Brady (pic 2007, encore élite à 45 ans)", emoji:"🌍", t:"Élite mondiale"},
+  {xp:45669, name:"Lionel Messi (pic 2012 au Barça)", emoji:"🌍", t:"Élite mondiale"},
+  {xp:46109, name:"Sébastien Chabal (pic 2007, \"le Caveman\" au sommet)", emoji:"🌍", t:"Élite mondiale"},
+  {xp:46552, name:"Serge Blanco (pic 1987, la légende du beau jeu)", emoji:"🌍", t:"Élite mondiale"},
+  {xp:46997, name:"Fabien Barthez (pic 1998, champion du monde)", emoji:"🌍", t:"Élite mondiale"},
+  {xp:47444, name:"Franck Ribéry (pic 2013, Ballon d'Or manqué de peu)", emoji:"🌍", t:"Élite mondiale"},
+  {xp:47893, name:"Yannick Noah (pic Roland-Garros 1983)", emoji:"🌍", t:"Élite mondiale"},
+  {xp:48344, name:"Bernard Hinault (pic Tour de France, \"le Blaireau\" conquérant)", emoji:"🌍", t:"Élite mondiale"},
+  {xp:48797, name:"Éric Cantona (pic 1996, Manchester United, \"le Roi\")", emoji:"🌍", t:"Élite mondiale"},
+  {xp:49252, name:"Just Fontaine (pic 1958, 13 buts en Coupe du Monde, record toujours debout)", emoji:"🌍", t:"Élite mondiale"},
+  {xp:49709, name:"Arnold Schwarzenegger (pic Mr. Olympia 1975)", emoji:"👽", t:"Spécimen ultime"},
+  {xp:50169, name:"Lou Ferrigno (pic Hulk, 1978)", emoji:"👽", t:"Spécimen ultime"},
+  {xp:50631, name:"Ronnie Coleman (pic Mr. Olympia 2003, \"Light weight baby!\")", emoji:"👽", t:"Spécimen ultime"},
+  {xp:51095, name:"Hulk Hogan (pic catch, années 80)", emoji:"👽", t:"Spécimen ultime"},
+  {xp:51561, name:"Chuck Norris (aucune précision nécessaire)", emoji:"👽", t:"Spécimen ultime"},
+  {xp:52029, name:"Johnny Weissmuller (pic Tarzan, ex-champion olympique de natation)", emoji:"👽", t:"Spécimen ultime"},
+  {xp:52499, name:"Bruce Lee (pic 1972)", emoji:"👽", t:"Spécimen ultime"},
+  {xp:52971, name:"Sylvester Stallone (pic Rocky IV, 1985)", emoji:"👽", t:"Spécimen ultime"},
+  {xp:53445, name:"Dolph Lundgren (pic Rocky IV, 1985)", emoji:"👽", t:"Spécimen ultime"},
+  {xp:53922, name:"Hugh Jackman (pic Logan, 2017)", emoji:"👽", t:"Spécimen ultime"},
+  {xp:54401, name:"Chris Hemsworth (pic Thor: Love and Thunder)", emoji:"👽", t:"Spécimen ultime"},
+  {xp:54882, name:"Henry Cavill (pic Man of Steel)", emoji:"👽", t:"Spécimen ultime"},
+  {xp:55365, name:"Terry Crews (aujourd'hui, ex-NFL toujours taillé)", emoji:"👽", t:"Spécimen ultime"},
+  {xp:55850, name:"Dwayne \"The Rock\" Johnson (aujourd'hui)", emoji:"👽", t:"Spécimen ultime"},
+  {xp:56337, name:"David Beckham (pic Real Madrid, référence esthétique)", emoji:"👽", t:"Spécimen ultime"},
+  {xp:56826, name:"Rafael Nadal (pic Roland-Garros, invincible sur terre battue)", emoji:"👽", t:"Spécimen ultime"},
+  {xp:57318, name:"Teddy Riner (invaincu pendant 10 ans, la montagne du judo)", emoji:"👽", t:"Spécimen ultime"},
+  {xp:57812, name:"Philippe Croizon (traverse le détroit de Béring à la nage, sans bras ni jambes)", emoji:"👽", t:"Spécimen ultime"},
+  {xp:58308, name:"Novak Djokovic (pic 2015-2016, quasi Grand Chelem calendaire)", emoji:"👽", t:"Spécimen ultime"},
+  {xp:58806, name:"Cristiano Ronaldo (aujourd'hui, la référence ultime — 41 ans, 6% de masse grasse)", emoji:"👽", t:"Spécimen ultime"}
 ];
 function rankFor(xp){ let r=0; RANKS.forEach((rk,i)=>{ if(xp>=rk.xp) r=i; }); return r; }
-function rankTier(){ return Math.min(2, Math.floor(rankFor(S.xp||0)/40)); }
+function rankTier(){ return Math.min(2, Math.floor(rankFor(S.xp||0)/67)); }
 const XP = { fait:10, partiel:5, water:5, supp:5, pr:25, dayComplete:20, longRow:15, boss:150, trophy:40, measure:3 };
 const TROPHIES = [
   {id:"first_pr",   emoji:"⭐", name:"Première Pierre", desc:"Battre son tout premier record", hint:"Tout empire commence quelque part…", c:x=>x.recTotal>=1},
@@ -544,7 +624,26 @@ const TROPHIES = [
   {id:"dawn100", emoji:"🥐", name:"Ministre de l'Aube", desc:"100 exercices validés avant 8h", hint:"Décret officiel : le matin t'appartient…", c:x=>x.st.before8>=100},
   {id:"night25", emoji:"🧛", name:"Vampire Certifié Conforme", desc:"25 exercices validés après 22h", hint:"L'ail ne te fait rien, la flemme non plus…", c:x=>x.st.after22>=25},
   {id:"streak180", emoji:"🧲", name:"Semestre Aimanté", desc:"180 jours de streak", hint:"Impossible de te décoller du programme…", c:x=>x.streak>=180},
-  {id:"streak365", emoji:"🎆", name:"Année Invaincue", desc:"365 jours de streak", hint:"Un tour complet du soleil sans lâcher…", c:x=>x.streak>=365}
+  {id:"streak365", emoji:"🎆", name:"Année Invaincue", desc:"365 jours de streak", hint:"Un tour complet du soleil sans lâcher…", c:x=>x.streak>=365},
+  {id:"warm10", emoji:"🔧", name:"Diesel Bien Préchauffé", desc:"10 échauffements validés", hint:"Le moteur ne démarre plus à froid…", c:x=>x.st.warmups>=10},
+  {id:"warm50", emoji:"🚒", name:"Chauffagiste Agréé", desc:"50 échauffements validés", hint:"Certification officielle de la mise en température…", c:x=>x.st.warmups>=50},
+  {id:"bossx2", emoji:"🗡️", name:"Double Kill Mensuel", desc:"Un boss vaincu deux fois dans le même mois", hint:"Il est revenu, il est reparti…", c:x=>x.bossMaxTier>=2},
+  {id:"bossx3", emoji:"😈", name:"Triple Menace", desc:"Un boss vaincu trois fois dans le même mois", hint:"À ce stade, c'est du harcèlement…", c:x=>x.bossMaxTier>=3},
+  {id:"kills10", emoji:"💰", name:"Chasseur de Primes", desc:"10 victoires de boss cumulées", hint:"Les têtes mises à prix tombent…", c:x=>x.killsTotal>=10},
+  {id:"lvl50", emoji:"🗿", name:"Un Quart du Panthéon", desc:"Atteindre le statut niveau 50", hint:"50 célébrités laissées derrière toi…", c:x=>x.xp>=RANKS[49].xp},
+  {id:"lvl100", emoji:"🪙", name:"Moitié de Légende", desc:"Atteindre le statut niveau 100", hint:"Le miroir commence à applaudir…", c:x=>x.xp>=RANKS[99].xp},
+  {id:"lvl150", emoji:"🏺", name:"Trois Quarts de Dieu Grec", desc:"Atteindre le statut niveau 150", hint:"L'Olympe prépare ta chambre…", c:x=>x.xp>=RANKS[149].xp},
+  {id:"lvl200", emoji:"🦁", name:"Sommet de la Chaîne Alimentaire", desc:"Atteindre le statut niveau 200", hint:"Au-dessus, il n'y a plus personne…", c:x=>x.xp>=RANKS[199].xp},
+  {id:"rowday10k", emoji:"🌊", name:"Dix Bornes d'une Traite", desc:"10 km de rameur en une seule séance", hint:"Sans poser la poignée…", c:x=>x.st.maxRowDist>=10000},
+  {id:"rowday21k", emoji:"🫁", name:"Semi d'un Coup de Rein", desc:"21 km+ de rameur en une seule séance", hint:"Les poumons s'en souviennent encore…", c:x=>x.st.maxRowDist>=21097},
+  {id:"water100", emoji:"🏰", name:"Château d'Eau Ambulant", desc:"100 jours à 3 litres (cumulés)", hint:"La ville pourrait se brancher sur toi…", c:x=>x.st.waterDaysTotal>=100},
+  {id:"supp100", emoji:"⚕️", name:"Pharmacien de Garde Permanent", desc:"100 jours de compléments complets (cumulés)", hint:"Ouvert même les jours fériés…", c:x=>x.st.suppDaysTotal>=100},
+  {id:"legs24", emoji:"🍗", name:"Cuisses de Ministre", desc:"Un exercice de jambes validé à 24 kg", hint:"Le bas du corps prend le pouvoir…", c:x=>["goblet-squat","squat-2-halteres","fentes-arriere-halteres","fentes-bulgares","souleve-de-terre-roumain","souleve-de-terre-sumo"].some(id=>(x.prs[id]||{}).kg>=24)},
+  {id:"shoulders16", emoji:"🧳", name:"Épaules de Déménageur Breton", desc:"Développé militaire ou Arnold à 16 kg", hint:"Les armoires normandes te craignent…", c:x=>["developpe-militaire-debout","developpe-arnold"].some(id=>(x.prs[id]||{}).kg>=16)},
+  {id:"sdt28", emoji:"🏗️", name:"Grutier du Soulevé", desc:"Soulevé de terre roumain à 28 kg", hint:"Permis cariste bientôt obligatoire…", c:x=>(x.prs["souleve-de-terre-roumain"]||{}).kg>=28},
+  {id:"nav150", emoji:"💼", name:"Bernard Arnault du Bas du Dos", desc:"NAV du Body Fund à 150", hint:"Première fortune corporelle de France…", c:x=>x.nav>=150},
+  {id:"prweek10", emoji:"✨", name:"Semaine des Merveilles", desc:"10 records battus en 7 jours", hint:"Une pluie d'étoiles filantes…", c:x=>x.prWeek>=10},
+  {id:"month26", emoji:"🗓️", name:"Mois Ouvré Sans RTT", desc:"26 jours actifs dans le même mois", hint:"La convention collective désapprouve…", c:x=>x.maxMonthActive>=26}
 ];
 const BOSSES = [
   {id:"kraken",   emoji:"🐙", name:"Le Kraken",    desc:"km de rameur dans le mois",          base:30,  metric:"rowKm"},
@@ -821,6 +920,23 @@ function load(){
     initV3Fields();
   }catch(e){ S = defaultState(); initV3Fields(); seedTemplate(); }
 }
+const WARMUP_EX={id:"echauffement-halteres", name:"Échauffement Haltères", cat:"Échauffement", ut:"min",
+  muscles:"Épaules - Hanches - Poignets - Cardio léger",
+  yt:"https://www.youtube.com/results?search_query=%C3%A9chauffement+complet+musculation+5+minutes"};
+function ensureWarmup(){
+  if(!S.exercises.find(e=>e.id===WARMUP_EX.id)) S.exercises.unshift({...WARMUP_EX});
+  if(!S.warmupAdded){
+    Object.keys(S.template).forEach(k=>{
+      const list=S.template[k];
+      const hasSets=list.some(id=>{const e=S.exercises.find(x=>x.id===id);return e&&e.ut==="sets";});
+      if(hasSets&&!list.includes(WARMUP_EX.id)){
+        const ri=list.findIndex(id=>id&&id.startsWith("rameur"));
+        list.splice(ri>=0?ri+1:0,0,WARMUP_EX.id);
+      }
+    });
+    S.warmupAdded=true; save();
+  }
+}
 function initV3Fields(){
   if(!S.firstUse) S.firstUse=todayIso();
   if(!S.cycleStart){ S.cycleStart=weekId(todayIso()); }
@@ -828,6 +944,7 @@ function initV3Fields(){
   if(S.jokers===undefined) S.jokers=0;
   if(!S.customRaceDistances) S.customRaceDistances=[];
   if(!S.ergattaRecords) S.ergattaRecords={};
+  ensureWarmup();
 }
 function migrateV1toV2(){
   S.version=2; S.trophies={}; S.bossDone={};
@@ -872,13 +989,14 @@ function seedTemplate(){
   const id = n => S.exercises.find(e=>e.id===n) ? n : null;
   const F = a => a.filter(Boolean);
   const core = [id("planche"), id("abdos-classiques")];
-  S.template[1] = F([id("rameur-entrainement"), id("goblet-squat"), id("developpe-couche"), id("developpe-militaire-debout"), id("fentes-arriere-halteres"), ...core]);
+  const wu = WARMUP_EX.id;
+  S.template[1] = F([id("rameur-entrainement"), wu, id("goblet-squat"), id("developpe-couche"), id("developpe-militaire-debout"), id("fentes-arriere-halteres"), ...core]);
   S.template[2] = F([id("rameur-entrainement"), ...core, id("abdos-lateraux")]);
-  S.template[3] = F([id("rameur-entrainement"), id("rowing-1-bras"), id("souleve-de-terre-roumain"), id("rowing-2-bras"), id("curl-marteau"), ...core]);
+  S.template[3] = F([id("rameur-entrainement"), wu, id("rowing-1-bras"), id("souleve-de-terre-roumain"), id("rowing-2-bras"), id("curl-marteau"), ...core]);
   S.template[4] = F([id("rameur-entrainement"), ...core, id("russian-twist-leste")]);
-  S.template[5] = F([id("rameur-entrainement"), id("squat-2-halteres"), id("ecarte-couche"), id("developpe-arnold"), id("fentes-bulgares"), ...core]);
+  S.template[5] = F([id("rameur-entrainement"), wu, id("squat-2-halteres"), id("ecarte-couche"), id("developpe-arnold"), id("fentes-bulgares"), ...core]);
   S.template[6] = F([id("tennis"), ...core]);
-  S.template[0] = F([id("rameur-course"), id("swing-haltere"), id("thruster"), id("pull-over"), ...core]);
+  S.template[0] = F([id("rameur-course"), wu, id("swing-haltere"), id("thruster"), id("pull-over"), ...core]);
 }
 
 /* ---------- Dates ---------- */
@@ -1439,18 +1557,21 @@ function checkStreakMilestones(){
 }
 /* ---------- Trophées & Boss ---------- */
 function trophyStats(){
-  let rowM=0,row40=0,abs=0,vol=0,doneCount=0,pushups=0,before8=0,after22=0,tennis=0,weekend=0,plankSec=0,rowMin=0,maxAbsDay=0,maxPushDay=0,maxDayVol=0,restDays=0,jokerSpent=0;
+  let rowM=0,row40=0,abs=0,vol=0,doneCount=0,pushups=0,before8=0,after22=0,tennis=0,weekend=0,plankSec=0,rowMin=0,maxAbsDay=0,maxPushDay=0,maxDayVol=0,restDays=0,jokerSpent=0,warmups=0,maxRowDist=0,waterDaysTotal=0,suppDaysTotal=0;
   const doneByDay={};
   Object.keys(S.days).forEach(d=>{
     let dCount=0, dAbs=0, dPush=0, dVol=0;
     const dow=fromIso(d).getDay();
     if(S.days[d].rest) restDays++;
     if(S.days[d].jokerUsed) jokerSpent++;
+    if((S.days[d].water||0)>=12) waterDaysTotal++;
+    if(S.days[d].supp&&SUPPLEMENTS.every(s=>S.days[d].supp[s.id])) suppDaysTotal++;
     (S.days[d].blocks||[]).forEach(b=>{
       if(b.status!=="fait"&&b.status!=="partiel") return;
       doneCount++; dCount++;
       const ex=exById(b.exId); if(!ex) return;
-      if(b.exId.startsWith("rameur")){ rowM+=Number(b.dist)||0; rowMin+=Number(b.min)||0; if((Number(b.min)||0)>=40) row40++; }
+      if(b.exId.startsWith("rameur")){ rowM+=Number(b.dist)||0; rowMin+=Number(b.min)||0; maxRowDist=Math.max(maxRowDist,Number(b.dist)||0); if((Number(b.min)||0)>=40) row40++; }
+      if(b.exId==="echauffement-halteres") warmups++;
       if(b.exId==="abdos-classiques"||b.exId==="abdos-lateraux"){ abs+=Number(b.nb)||0; dAbs+=Number(b.nb)||0; }
       if(b.exId==="pompes"){ pushups+=Number(b.nb)||0; dPush+=Number(b.nb)||0; }
       if(b.exId==="planche") plankSec+=Number(b.sec)||0;
@@ -1462,7 +1583,7 @@ function trophyStats(){
     maxAbsDay=Math.max(maxAbsDay,dAbs); maxPushDay=Math.max(maxPushDay,dPush); maxDayVol=Math.max(maxDayVol,dVol);
     doneByDay[d]=dCount;
   });
-  return {rowM,row40,abs,vol,doneCount,pushups,before8,after22,tennis,weekend,plankSec,rowMin,maxAbsDay,maxPushDay,maxDayVol,restDays,jokerSpent,doneByDay};
+  return {rowM,row40,abs,vol,doneCount,pushups,before8,after22,tennis,weekend,plankSec,rowMin,maxAbsDay,maxPushDay,maxDayVol,restDays,jokerSpent,warmups,maxRowDist,waterDaysTotal,suppDaysTotal,doneByDay};
 }
 function checkTrophies(){
   const st=trophyStats();
@@ -1503,6 +1624,13 @@ function checkTrophies(){
     if(n>=4) okWeeks++;
   }
   x.okWeeks=okWeeks;
+  x.killsTotal=Object.values(S.bossDone).reduce((a,y)=>a+(y.tier||1),0);
+  x.bossMaxTier=Math.max(0,...Object.values(S.bossDone).map(y=>y.tier||1),0);
+  x.maxMonthActive=0;
+  { const byM={};
+    Object.entries(st.doneByDay).forEach(([d,n])=>{ if(n>0) byM[ym(d)]=(byM[ym(d)]||0)+1; });
+    x.maxMonthActive=Math.max(0,...Object.values(byM),0);
+  }
   x.ergBeaten=0;
   Object.keys(S.raceRecords).forEach(d=>{ const e=S.ergattaRecords[d]; if(e&&S.raceRecords[d].sec<e.sec) x.ergBeaten++; });
   x.customDist=(S.customRaceDistances||[]).length;
@@ -1547,10 +1675,12 @@ function bossForMonth(ymS){
   const idx=(y*12+m) % BOSSES.length;
   const b=BOSSES[idx];
   const mult=[1,1.25,1.5][rankTier()];
-  return {...b, target: Math.round(b.base*mult)};
+  const prev=S.bossDone[prevYm(ymS)];
+  const adapt=prev? Math.min(1.8, 1+0.2*(prev.tier||1)) : 1;
+  return {...b, target: Math.round(b.base*mult*adapt)};
 }
-function bossProgress(ymS){
-  const b=bossForMonth(ymS);
+function bossTierTarget(base,tier){ return Math.round(base*Math.pow(1.5,tier)); }
+function bossValue(ymS,b){
   let v=0;
   const days=Object.keys(S.days).filter(d=>d.startsWith(ymS));
   const activeSet=new Set();
@@ -1573,17 +1703,28 @@ function bossProgress(ymS){
     if(b.metric==="waterDays" && day.water>=12) v+=1;
   });
   if(b.metric==="activeDays") v=activeSet.size;
-  return {boss:b, value:v, pct:Math.min(100, v/b.target*100)};
+  return v;
+}
+function bossProgress(ymS){
+  const b=bossForMonth(ymS);
+  const done=S.bossDone[ymS];
+  const tier=done? (done.tier||1) : 0;
+  const v=bossValue(ymS,b);
+  const target=bossTierTarget(b.target,tier);
+  return {boss:b, value:v, tier, target, pct:Math.min(100, v/target*100)};
 }
 function checkBoss(){
   const m=ym(todayIso());
-  if(S.bossDone[m]) return;
-  const p=bossProgress(m);
-  if(p.value>=p.boss.target){
-    S.bossDone[m]={date:todayIso(), boss:p.boss.id}; save();
+  let p=bossProgress(m), guard=0;
+  while(p.value>=p.target && guard<6){
+    const newTier=p.tier+1;
+    S.bossDone[m]={date:todayIso(), boss:p.boss.id, tier:newTier}; save();
     addXP(XP.boss);
-    showCongrats(p.boss.emoji+" BOSS VAINCU : "+p.boss.name.toUpperCase()+" ! "+p.boss.target+" "+p.boss.desc+" — terrassé. +"+XP.boss+" XP. Le prochain t'attend le mois prochain.", true);
+    const next=bossTierTarget(p.boss.target,newTier);
+    showCongrats(p.boss.emoji+" BOSS "+(newTier>1?"NIVEAU "+newTier+" ":"")+"VAINCU : "+p.boss.name.toUpperCase()+" ! +"+XP.boss+" XP. Mais il se relève, plus énervé : nouvel objectif "+next+" "+p.boss.desc+" avant la fin du mois. 😈", true);
     checkTrophies();
+    p=bossProgress(m);
+    guard++;
   }
 }
 function pickCongrats(){
@@ -2031,9 +2172,14 @@ function rankHeader(){
   const xp=S.xp||0, ri=rankFor(xp), rk=RANKS[ri];
   const next=RANKS[ri+1];
   const pct=next? Math.min(100,(xp-rk.xp)/(next.xp-rk.xp)*100) : 100;
-  return '<div class="rankbar"><div class="row between"><div><div class="rname">'+rk.name+'</div>'
-    +'<div class="muted small">'+xp+' XP'+(next?' · prochain grade : <b style="color:var(--gold)">'+next.name+'</b> à '+next.xp+' XP':' · grade maximum atteint 👑')
-    +((S.jokers||0)>0?' · <span class="jok">🃏 ×'+S.jokers+'</span>':'')+'</div></div>'
+  const stk=currentStreak(todayIso());
+  return '<div class="rankbar"><div class="row between"><div>'
+    +'<div class="muted small" style="text-transform:uppercase;letter-spacing:.5px;font-weight:700;font-size:.62rem">Niv. '+(ri+1)+'/200 · '+esc(rk.t||"")+'</div>'
+    +'<div class="rname">'+esc(rk.name)+'</div>'
+    +'<div class="muted small">'+xp+' XP'+(next?' · prochain : <b style="color:var(--gold)">'+esc(next.name)+'</b> à '+next.xp+' XP':' · sommet absolu atteint 👑')
+    +'</div><div class="muted small" style="margin-top:3px">'
+    +(stk>0?'<span class="jok">🔥 '+stk+' j</span> ':'')
+    +((S.jokers||0)>0?'<span class="jok">🃏 ×'+S.jokers+'</span>':'')+'</div></div>'
     +'<div class="remoji">'+rk.emoji+'</div></div>'
     +'<div class="xpbar"><div style="width:'+pct+'%"></div></div></div>';
 }
@@ -2046,7 +2192,8 @@ function coachBrief(day){
   let mins=0,nSets=0;
   (day.blocks||[]).forEach(b=>{
     const ex=exById(b.exId); if(!ex)return;
-    if(ex.ut==="min") mins+=(b.exId==="rameur-course"?48:18);
+    if(b.exId==="echauffement-halteres") mins+=6;
+    else if(ex.ut==="min") mins+=(b.exId==="rameur-course"?48:18);
     else if(ex.ut==="sets") nSets+=(b.sets||[]).length;
     else mins+=3;
   });
@@ -2078,11 +2225,12 @@ function renderToday(){
   if(isToday) html+=coachBrief(day);
   banners.forEach(b=>html+='<div class="banner '+b.t+'"><b>'+b.h+'</b>'+b.m+'</div>');
   const bp=bossProgress(ym(CUR_DATE));
-  const beaten=S.bossDone[ym(CUR_DATE)];
-  html+='<div class="bosscard"><div class="row between"><div><b style="font-size:.92rem">'+bp.boss.emoji+' Boss du mois : '+bp.boss.name+'</b>'
-    +'<div class="muted small">'+(beaten?"Vaincu ! Repose-toi, guerrier. 🏆":Math.round(bp.value)+" / "+bp.boss.target+" "+bp.boss.desc)+'</div></div>'
-    +'<b style="color:var(--violet)">'+(beaten?"✓":Math.round(bp.pct)+"%")+'</b></div>'
-    +'<div class="bossbar"><div style="width:'+(beaten?100:bp.pct)+'%"></div></div></div>';
+  html+='<div class="bosscard"><div class="row between"><div><b style="font-size:.92rem">'+bp.boss.emoji+' Boss du mois : '+bp.boss.name
+    +(bp.tier>0?' <span class="jok">⚔️ Niv. '+(bp.tier+1)+'</span>':'')+'</b>'
+    +'<div class="muted small">'+Math.round(bp.value)+' / '+bp.target+' '+bp.boss.desc
+    +(bp.tier>0?' · déjà vaincu ×'+bp.tier+' ce mois-ci 🏆':'')+'</div></div>'
+    +'<b style="color:var(--violet)">'+Math.round(bp.pct)+'%</b></div>'
+    +'<div class="bossbar"><div style="width:'+bp.pct+'%"></div></div></div>';
   html+='<div class="card tight row between"><div><b style="font-size:.9rem">Jour de repos</b><div class="muted small">déplacement, récup… aucune pénalité, la streak continue</div></div>'
     +'<button class="btn mini '+(day.rest?"primary":"")+'" onclick="toggleRest()">'+(day.rest?"✓ Repos":"Marquer repos")+'</button></div>';
   if(!day.rest){
@@ -2117,6 +2265,8 @@ function renderToday(){
   $v().innerHTML=html;
 }
 function prescLine(b,day){
+  if(b.exId==="echauffement-halteres")
+    return '<div class="warmline">🔥 5-6 min faciles avant les haltères : rotations épaules/hanches/poignets, jumping jacks légers, montées de genoux. Objectif : chauffer, pas fatiguer — la vidéo guide tout.</div>';
   const ex=exById(b.exId); if(!ex) return "";
   const p=prescribe(b.exId,CUR_DATE,day);
   if(!p) return "";
@@ -2935,20 +3085,33 @@ function savePrEdit(exId){
 }
 function statsSucces(){
   const ri=rankFor(S.xp||0);
-  let html='<h2 style="margin-top:0">🎖️ Grades</h2><div class="card tight">';
+  let html='<h2 style="margin-top:0">🎖️ Les 200 Statuts — Niv. '+(ri+1)+'</h2><div class="card tight">';
+  const tiers=[];
   RANKS.forEach((rk,i)=>{
-    const state=i<ri?"passé":(i===ri?"actuel":"verrouillé");
-    html+='<div class="streakrow"><span>'+rk.emoji+' '+rk.name+(i===ri?' <b style="color:var(--gold)">← toi</b>':'')+'</span>'
-      +'<span class="muted small">'+(i<=ri?"✓":rk.xp+" XP")+'</span></div>';
+    if(!tiers.length||tiers[tiers.length-1].t!==rk.t) tiers.push({t:rk.t,emoji:rk.emoji,items:[]});
+    tiers[tiers.length-1].items.push({rk,i});
+  });
+  tiers.forEach(tg=>{
+    const hasMe=tg.items.some(x=>x.i===ri);
+    const doneAll=tg.items.every(x=>x.i<ri);
+    html+='<details '+(hasMe?"open":"")+'><summary style="padding:9px 0;font-weight:700;cursor:pointer">'+tg.emoji+' '+esc(tg.t)
+      +' <span class="muted small">('+(doneAll?"✓ complété":"niv. "+(tg.items[0].i+1)+"–"+(tg.items[tg.items.length-1].i+1))+')</span></summary>';
+    tg.items.forEach(x=>{
+      html+='<div class="streakrow"><span'+(x.i>ri?' class="dim"':'')+'>'+(x.i+1)+'. '+esc(x.rk.name)+(x.i===ri?' <b style="color:var(--gold)">← toi</b>':'')+'</span>'
+        +'<span class="muted small">'+(x.i<=ri?"✓":x.rk.xp+" XP")+'</span></div>';
+    });
+    html+='</details>';
   });
   html+='</div>';
   const m=ym(todayIso());
   const bp=bossProgress(m);
-  html+='<h2>🐉 Boss du mois</h2><div class="bosscard"><div class="row between"><div><b>'+bp.boss.emoji+' '+bp.boss.name+'</b>'
-    +'<div class="muted small">'+bp.boss.target+' '+bp.boss.desc+' — difficulté liée à ton grade</div></div>'
+  const kills=Object.values(S.bossDone).reduce((a,x)=>a+(x.tier||1),0);
+  html+='<h2>🐉 Boss du mois</h2><div class="bosscard"><div class="row between"><div><b>'+bp.boss.emoji+' '+bp.boss.name
+    +(bp.tier>0?' <span class="jok">⚔️ Niv. '+(bp.tier+1)+'</span>':'')+'</b>'
+    +'<div class="muted small">Objectif en cours : '+bp.target+' '+bp.boss.desc+' — il évolue à chaque victoire et se calibre sur ta forme</div></div>'
     +'<b style="color:var(--violet)">'+Math.round(bp.pct)+'%</b></div>'
     +'<div class="bossbar"><div style="width:'+bp.pct+'%"></div></div>'
-    +'<div class="muted small" style="margin-top:8px">Boss vaincus : '+Object.keys(S.bossDone).length+' · récompense : +'+XP.boss+' XP</div></div>';
+    +'<div class="muted small" style="margin-top:8px">Victoires totales : '+kills+' ('+Object.keys(S.bossDone).length+' mois) · +'+XP.boss+' XP par niveau · le mois suivant repart calibré sur tes exploits</div></div>';
   const n=Object.keys(S.trophies).length;
   html+='<h2>🏆 Vitrine à trophées — '+n+'/'+TROPHIES.length+'</h2><div class="trophygrid">';
   TROPHIES.forEach(t=>{
